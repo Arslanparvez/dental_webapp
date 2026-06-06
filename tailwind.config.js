@@ -14,6 +14,7 @@ export default {
       fontFamily: {
         heading: ['Poppins', 'sans-serif'],
         body: ['Inter', 'sans-serif'],
+        display: ['"Playfair Display"', 'Georgia', 'serif'],
       },
       maxWidth: { container: '1280px' },
       keyframes: {
