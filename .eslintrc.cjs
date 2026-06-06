@@ -20,5 +20,20 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
+    'react/prop-types': 'off',
   },
+  overrides: [
+    {
+      files: ['**/*.test.{js,jsx}', 'src/setupTests.js'],
+      globals: {
+        test: 'readonly',
+        expect: 'readonly',
+        describe: 'readonly',
+        it: 'readonly',
+        beforeEach: 'readonly',
+        afterEach: 'readonly',
+        vi: 'readonly',
+      },
+    },
+  ],
 }
