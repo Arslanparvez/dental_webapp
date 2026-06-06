@@ -153,10 +153,10 @@ export function SideNav({ isOpen, onClose }) {
             role="dialog"
             aria-modal="true"
             aria-label="Main navigation"
-            className="fixed top-0 right-0 z-50 flex h-full w-full flex-col overflow-y-auto bg-offwhite md:w-[46vw] md:max-w-xl"
-            initial={{ x: '100%' }}
+            className="fixed top-0 left-0 z-50 flex h-full w-full flex-col overflow-y-auto bg-offwhite md:w-[46vw] md:max-w-xl"
+            initial={{ x: '-100%' }}
             animate={{ x: 0 }}
-            exit={{ x: '100%' }}
+            exit={{ x: '-100%' }}
             transition={panelTransition}
           >
             {/* Header */}
