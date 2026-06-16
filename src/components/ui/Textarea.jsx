@@ -2,7 +2,7 @@ import { useId } from 'react'
 import { cn } from '../../lib/cn'
 
 const controlClasses =
-  'w-full rounded-lg border border-black/10 px-4 py-3 font-body text-navy transition focus:outline-none focus:ring-2 focus:ring-teal'
+  'w-full rounded-xl border border-zinc-200 bg-white px-4 py-3 font-body text-[15px] text-ink placeholder:text-zinc-400 transition-shadow duration-200 focus:border-teal focus:outline-none focus:ring-4 focus:ring-teal/10'
 
 export function Textarea({ label, id, error, className, rows = 4, ...rest }) {
   const generatedId = useId()
@@ -12,14 +12,14 @@ export function Textarea({ label, id, error, className, rows = 4, ...rest }) {
   return (
     <div className="flex flex-col gap-1.5">
       {label && (
-        <label htmlFor={textareaId} className="font-heading text-sm font-semibold text-navy">
+        <label htmlFor={textareaId} className="font-heading text-sm font-medium text-zinc-700">
           {label}
         </label>
       )}
       <textarea
         id={textareaId}
         rows={rows}
-        className={cn(controlClasses, error && 'border-red-500 focus:ring-red-500', className)}
+        className={cn(controlClasses, 'resize-none', error && 'border-red-400 focus:border-red-500 focus:ring-red-500/10', className)}
         aria-invalid={error ? true : undefined}
         aria-describedby={error ? errorId : undefined}
         {...rest}

@@ -1,7 +1,8 @@
-import { Link } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 import { cn } from '../../lib/cn'
 import { Button } from '../ui/Button'
 import { Container } from '../ui/Container'
+import { NAV } from '../../data/nav'
 import { useDisclosure } from '../../hooks/useDisclosure'
 import { useScrollPosition } from '../../hooks/useScrollPosition'
 import { SideNav } from './SideNav'
@@ -16,52 +17,77 @@ function MenuIcon(props) {
   )
 }
 
+function Wordmark() {
+  return (
+    <Link to="/" className="flex items-center gap-2 font-heading text-lg font-bold tracking-tightest text-ink">
+      <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-ink text-white">
+        <span className="text-sm font-black">D</span>
+      </span>
+      Digiart
+    </Link>
+  )
+}
+
 export function TopBar() {
   const { isOpen, open, close } = useDisclosure()
-  const scrolled = useScrollPosition(40)
+  const scrolled = useScrollPosition(20)
+
+  const links = NAV.filter((item) => item.to)
 
   return (
     <>
       <header
         className={cn(
-          'fixed inset-x-0 top-0 z-30 transition-colors duration-300',
-          scrolled ? 'bg-navy/95 text-white shadow-md backdrop-blur' : 'bg-transparent text-navy'
+          'fixed inset-x-0 top-0 z-30 transition-all duration-300',
+          scrolled
+            ? 'border-b border-zinc-200/80 bg-white/80 backdrop-blur-xl'
+            : 'border-b border-transparent bg-transparent'
         )}
       >
-        <Container className="flex items-center justify-between py-4">
-          {/* Left: boxed menu toggle + logo */}
-          <div className="flex items-center gap-3 sm:gap-4">
+        <Container className="flex h-16 items-center justify-between gap-4">
+          <Wordmark />
+
+          {/* Desktop nav */}
+          <nav className="hidden items-center gap-1 lg:flex" aria-label="Primary">
+            {links.map((item) => (
+              <NavLink
+                key={item.label}
+                to={item.to}
+                end={item.to === '/'}
+                className={({ isActive }) =>
+                  cn(
+                    'relative rounded-lg px-3.5 py-2 text-sm font-medium transition-colors',
+                    isActive ? 'text-ink' : 'text-zinc-500 hover:text-ink'
+                  )
+                }
+              >
+                {({ isActive }) => (
+                  <>
+                    {item.label}
+                    {isActive && (
+                      <span className="absolute inset-x-3.5 -bottom-px h-px bg-teal" aria-hidden="true" />
+                    )}
+                  </>
+                )}
+              </NavLink>
+            ))}
+          </nav>
+
+          <div className="flex items-center gap-2">
+            <Button to="/contact" variant="primary" size="sm" className="hidden sm:inline-flex">
+              Request a Quote
+            </Button>
             <button
               type="button"
               onClick={open}
               aria-label="Open menu"
               aria-expanded={isOpen}
               aria-haspopup="dialog"
-              className="flex h-11 w-11 items-center justify-center rounded-xl border border-black/10 bg-white text-navy shadow-sm transition hover:bg-lightgray focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal"
+              className="flex h-10 w-10 items-center justify-center rounded-xl border border-zinc-200 bg-white text-ink transition hover:bg-zinc-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal lg:hidden"
             >
               <MenuIcon className="h-5 w-5" aria-hidden="true" />
             </button>
-
-            <Link
-              to="/"
-              className={cn(
-                'font-heading text-xl font-bold tracking-tight transition-colors sm:text-2xl',
-                scrolled ? 'text-white' : 'text-navy'
-              )}
-            >
-              Digiart <span className="text-teal">Centre</span>
-            </Link>
           </div>
-
-          {/* Right: primary CTA */}
-          <Button
-            variant="primary"
-            size="sm"
-            to="/contact"
-            className="hidden sm:inline-flex"
-          >
-            Request a Quote
-          </Button>
         </Container>
       </header>
 

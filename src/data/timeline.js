@@ -2,31 +2,31 @@ export const timeline = [
   {
     year: '2012',
     title: 'Founded in Dubai',
-    text: 'Digiart Centre opened its doors as a specialist dental CAD/CAM design studio serving local laboratories.',
+    text: 'Digiart Design Services opened in Bur Dubai as a specialist dental CAD/CAM design studio serving local laboratories.',
   },
   {
     year: '2015',
     title: 'Digital Design at Scale',
-    text: 'Invested in enterprise design software and validated workflows, expanding capacity to thousands of cases per year.',
+    text: 'Invested in exocad and 3Shape design platforms and validated workflows, expanding capacity to thousands of cases per year.',
   },
   {
     year: '2017',
-    title: 'Trading Division Launched',
-    text: 'Added a dedicated dental trading arm to supply premium materials and equipment across the GCC and Asia.',
+    title: 'Implant & Full-Arch Design',
+    text: 'Added dedicated implant and All-on-X full-arch design expertise for complex, restoration-driven cases.',
   },
   {
     year: '2019',
-    title: 'Philippines Branch Opens',
-    text: 'Established our Manila branch to bring design services, products, and technical support closer to Southeast Asian partners.',
+    title: 'Guided Surgery & Diagnostics',
+    text: 'Introduced surgical guide and diagnostic wax-up design, merging CBCT and scan data into prosthetically driven plans.',
   },
   {
     year: '2022',
-    title: 'Full Digital Dentistry Suite',
-    text: 'Integrated intraoral scanning support, model-free workflows, and chairside-to-lab collaboration tools.',
+    title: 'Full Digital Design Suite',
+    text: 'Completed an end-to-end offering spanning fixed, implant, removable, surgical, and appliance design.',
   },
   {
     year: '2025',
     title: 'Serving 25+ Countries',
-    text: 'Today Digiart Centre supports 500+ clients worldwide with design, trading, products, and dedicated technical support.',
+    text: 'Today Digiart Design Services supports 500+ clients worldwide with fast, precise, remotely delivered design.',
   },
 ]

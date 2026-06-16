@@ -1,521 +1,202 @@
-// CMS-shaped product catalog. A curated base of realistic dental lab products is
-// expanded with shade / size / material variants to build a full catalog.
+// Catalog of Digiart's zirconia materials, grouped into three families:
+// White, Preshade, and Multilayer. Each entry is a distinct disc grade.
+import { zirconiaImages } from './siteImages'
 
-const img = (seed) => `https://picsum.photos/seed/${seed}/800/600`
+const imageForSlug = {
+  'ht-plus': zirconiaImages.copings,
+  'st-plus': zirconiaImages.archLower,
+  sht: zirconiaImages.molars,
+  ut: zirconiaImages.anterior1,
+  'htp-color': zirconiaImages.bridgeGingiva,
+  'stp-color': zirconiaImages.anterior2,
+  'sht-color': zirconiaImages.anteriorCloseup,
+  'st-multilayer': zirconiaImages.molars,
+  'ut-multilayer': zirconiaImages.anterior1,
+  'sht-multilayer': zirconiaImages.bridgeGingiva,
+  '3d-plus-multilayer': zirconiaImages.posteriorModel,
+  '4d-plus-multilayer': zirconiaImages.fullArchImplant,
+  '4d-pro-multilayer': zirconiaImages.anteriorCloseup,
+}
 
-// ---------------------------------------------------------------------------
-// Curated base products — at least 3-4 per category.
-// Each base product may declare `variants` (label + key/value applied to specs)
-// which the generator expands into individual catalog entries.
-// ---------------------------------------------------------------------------
 const base = [
-  // ---------------- CAD/CAM Materials ----------------
+  // ---------------- White ----------------
   {
-    slug: 'zirconia-multilayer-disc',
-    name: 'Multilayer Zirconia Disc',
-    category: 'cadcam-materials',
-    shortDescription:
-      'Pre-shaded multilayer zirconia disc with a natural gradient for esthetic monolithic restorations.',
+    slug: 'ht-plus',
+    name: 'HT Plus Zirconia',
+    category: 'white-zirconia',
+    shortDescription: 'High-translucent, high-strength zirconia for copings and frameworks.',
     description:
-      'A high-translucency multilayer zirconia disc engineered for monolithic and minimally layered restorations. The built-in shade gradient transitions smoothly from cervical to incisal, delivering lifelike esthetics straight from the mill with excellent flexural strength.',
-    specs: { Diameter: '98.5 mm', Material: 'Yttria-stabilized zirconia', Translucency: '49%', 'Flexural Strength': '1200 MPa' },
-    features: ['Natural shade gradient', 'High translucency', 'Open-system compatible', 'Pre-shaded'],
-    benefits: ['Faster esthetic results', 'Reduced layering time', 'Consistent shade matching'],
+      'A high-translucent Plus zirconia engineered for copings and frameworks where strength is paramount. Enhanced flexural strength and a fine, homogeneous grain structure deliver dependable substructures with smooth milling and stable green-body edges.',
+    specs: { Family: 'White', Aesthetic: 'High-translucent Plus', 'Bending Strength': '≥1200 MPa', 'Light Transmittance': '38%', 'Sintering Temp': '1530 °C', Shades: 'White (uncolored)' },
+    features: ['Enhanced strength with good translucency', 'Stable edges during milling', 'Fine homogeneous grain structure', 'Ideal for copings and frameworks'],
+    benefits: ['High-strength substructures', 'Reliable long-span frameworks', 'Smooth, chip-resistant milling'],
     featured: true,
-    variants: {
-      key: 'Thickness',
-      values: ['12 mm', '14 mm', '16 mm', '18 mm', '20 mm', '22 mm', '25 mm', '30 mm'],
-    },
   },
   {
-    slug: 'lithium-disilicate-block',
-    name: 'Lithium Disilicate Block',
-    category: 'cadcam-materials',
-    shortDescription:
-      'High-strength glass-ceramic block for esthetic single-unit crowns, inlays, onlays, and veneers.',
+    slug: 'st-plus',
+    name: 'ST Plus Zirconia',
+    category: 'white-zirconia',
+    shortDescription: 'Super-translucent zirconia for full-contour crowns and bridges.',
     description:
-      'A pressable-grade lithium disilicate milling block offering an outstanding balance of strength and esthetics. Ideal for chairside and lab single-unit restorations, with vivid fluorescence and easy polishability.',
-    specs: { Size: 'C14', Material: 'Lithium disilicate glass-ceramic', 'Flexural Strength': '530 MPa' },
-    features: ['High esthetics', 'Easy to polish', 'Chairside compatible'],
-    benefits: ['Lifelike translucency', 'Reliable single-unit strength', 'Quick finishing'],
+      'A super-translucent Plus zirconia balancing strength and esthetics for full-contour crowns and bridges up to long-span cases. Pairs with a 16-shade coloring liquid for natural, predictable results.',
+    specs: { Family: 'White', Aesthetic: 'Super-translucent Plus', 'Bending Strength': '≥1100 MPa', 'Light Transmittance': '43%', 'Sintering Temp': '1530 °C', Shades: 'White (uncolored)' },
+    features: ['Balanced strength and translucency', 'Suitable for full-contour crowns & bridges', 'Pairs with 16-shade coloring liquid', 'Up to 14-unit bridges'],
+    benefits: ['Esthetic monolithic restorations', 'Versatile across indications', 'Predictable shading'],
     featured: true,
-    variants: {
-      key: 'Shade',
-      values: ['A1', 'A2', 'A3', 'A3.5', 'B1', 'B2', 'C2', 'D2', 'BL2', 'BL3'],
-    },
   },
   {
-    slug: 'pmma-disc',
-    name: 'PMMA Milling Disc',
-    category: 'cadcam-materials',
-    shortDescription:
-      'Durable PMMA disc for temporaries, try-ins, and long-term provisional restorations.',
+    slug: 'sht',
+    name: 'SHT Zirconia',
+    category: 'white-zirconia',
+    shortDescription: 'Super-high-translucent zirconia for esthetic full-contour restorations.',
     description:
-      'A homogeneous, bubble-free PMMA disc designed for milling provisional crowns, bridges, and try-in restorations. Offers excellent edge stability and a smooth, easily polishable surface.',
-    specs: { Diameter: '98.5 mm', Material: 'Polymethyl methacrylate' },
-    features: ['Bubble-free', 'Easy polishing', 'Stable margins'],
-    benefits: ['Reliable provisionals', 'Comfortable try-ins', 'Cost-effective'],
+      'A super-high-translucent zirconia widely used for full-contour crowns and bridges, offering an excellent blend of translucency and reliable strength with a lower sintering temperature.',
+    specs: { Family: 'White', Aesthetic: 'Super-high-translucent', 'Bending Strength': '≥1000 MPa', 'Light Transmittance': '45%', 'Sintering Temp': '1450 °C', Shades: 'White (uncolored)' },
+    features: ['High translucency', 'Suitable for full-contour crowns & bridges', 'Pairs with 16-shade coloring liquid', 'Up to 14-unit bridges'],
+    benefits: ['Lifelike esthetics', 'Reliable everyday performance', 'Efficient sintering'],
     featured: false,
-    variants: {
-      key: 'Shade',
-      values: ['A1', 'A2', 'A3', 'A3.5', 'B2', 'Bleach', 'Clear', 'Pink'],
-    },
   },
   {
-    slug: 'wax-cadcam-disc',
-    name: 'CAD/CAM Wax Disc',
-    category: 'cadcam-materials',
-    shortDescription:
-      'Burnout wax disc for milling cast frameworks, press patterns, and try-in copings.',
+    slug: 'ut',
+    name: 'UT Zirconia',
+    category: 'white-zirconia',
+    shortDescription: 'Ultra-translucent zirconia for highly esthetic anterior restorations.',
     description:
-      'A clean-burning milling wax disc that leaves no residue, ideal for producing cast or press patterns with precise margins and fine detail reproduction.',
-    specs: { Diameter: '98.5 mm', Material: 'Burnout wax' },
-    features: ['Residue-free burnout', 'Fine detail', 'Stable milling'],
-    benefits: ['Accurate castings', 'Clean workflow', 'Predictable patterns'],
-    featured: false,
-    variants: {
-      key: 'Color',
-      values: ['Blue', 'Green', 'Amber'],
-    },
-  },
-  {
-    slug: 'hybrid-ceramic-block',
-    name: 'Hybrid Ceramic Block',
-    category: 'cadcam-materials',
-    shortDescription:
-      'Resin-ceramic hybrid block combining ceramic esthetics with shock-absorbing flexibility.',
-    description:
-      'A resin matrix ceramic block that blends the esthetics of ceramic with a degree of elasticity for stress absorption, well suited to single-unit crowns and implant-supported restorations.',
-    specs: { Size: '14L', Material: 'Resin matrix ceramic', 'Flexural Strength': '200 MPa' },
-    features: ['Shock absorbing', 'Easy adjustment', 'Esthetic finish'],
-    benefits: ['Gentle on opposing teeth', 'Fast finishing', 'Good marginal fit'],
-    featured: false,
-    variants: {
-      key: 'Shade',
-      values: ['A1', 'A2', 'A3', 'A3.5', 'B2', 'C2'],
-    },
+      'An ultra-translucent zirconia with superior glossy translucency, ideal for anterior crowns and veneers where esthetics are the priority.',
+    specs: { Family: 'White', Aesthetic: 'Ultra-translucent', 'Bending Strength': '≥1000 MPa', 'Light Transmittance': '49%', 'Sintering Temp': '1450 °C', Shades: 'White (uncolored)' },
+    features: ['Superior glossy translucency', 'Ideal for anterior restorations', 'Suitable for veneers', 'Pairs with coloring liquid'],
+    benefits: ['Outstanding anterior esthetics', 'Natural light behavior', 'Thin, lifelike veneers'],
+    featured: true,
   },
 
-  // ---------------- Dental Equipment ----------------
+  // ---------------- Preshade ----------------
   {
-    slug: 'dry-milling-machine',
-    name: '5-Axis Dry Milling Machine',
-    category: 'dental-equipment',
-    shortDescription:
-      'Compact 5-axis dry milling unit for zirconia, PMMA, and wax with automated tool changing.',
+    slug: 'htp-color',
+    name: 'HTP Color Zirconia',
+    category: 'preshade-zirconia',
+    shortDescription: 'Preshaded high-translucent zirconia for copings and frameworks — no coloring step.',
     description:
-      'A precision 5-axis dry milling machine built for high-throughput zirconia and PMMA production. Features an automatic tool changer, integrated suction, and intuitive job management for unattended batch milling.',
-    specs: { Axes: '5', 'Spindle Speed': '60,000 rpm', 'Tool Changer': '8 positions', Connectivity: 'Ethernet / USB' },
-    features: ['Automatic tool changer', 'Integrated dust extraction', 'Open material system'],
-    benefits: ['Unattended production', 'High accuracy', 'Lower running costs'],
-    featured: true,
-    variants: {
-      key: 'Configuration',
-      values: ['Standard', 'Pro', 'Lab Plus', 'Wet/Dry'],
-    },
-  },
-  {
-    slug: 'sintering-furnace',
-    name: 'High-Speed Sintering Furnace',
-    category: 'dental-equipment',
-    shortDescription:
-      'Programmable sintering furnace for zirconia with rapid and standard cycle support.',
-    description:
-      'A high-temperature sintering furnace with precise heating-element control and validated programs for full-contour and speed sintering of zirconia restorations.',
-    specs: { 'Max Temperature': '1600 °C', Capacity: '80 units', Programs: 'Up to 50' },
-    features: ['Rapid sintering programs', 'Precise temperature control', 'Large chamber'],
-    benefits: ['Same-day restorations', 'Consistent strength', 'High capacity'],
-    featured: true,
-    variants: {
-      key: 'Chamber Size',
-      values: ['Compact', 'Standard', 'Large'],
-    },
-  },
-  {
-    slug: 'lab-3d-printer',
-    name: 'Dental 3D Printer (DLP)',
-    category: 'dental-equipment',
-    shortDescription:
-      'High-resolution DLP 3D printer for models, guides, splints, and castable patterns.',
-    description:
-      'A fast, high-resolution DLP 3D printer optimized for dental applications including models, surgical guides, splints, and castable patterns, with a validated resin ecosystem.',
-    specs: { Technology: 'DLP', 'XY Resolution': '50 µm', 'Build Volume': '144 × 81 × 180 mm' },
-    features: ['High resolution', 'Fast print speed', 'Validated resins'],
-    benefits: ['Accurate models', 'Reliable guides', 'Versatile applications'],
-    featured: true,
-    variants: {
-      key: 'Resolution',
-      values: ['35 µm', '50 µm', '65 µm'],
-    },
-  },
-  {
-    slug: 'desktop-lab-scanner',
-    name: 'Desktop Lab Scanner',
-    category: 'dental-equipment',
-    shortDescription:
-      'High-accuracy structured-light desktop scanner for models, impressions, and articulators.',
-    description:
-      'A blue structured-light desktop scanner delivering fast, highly accurate digitization of models, impressions, and mounted articulators for a fully digital lab workflow.',
-    specs: { Accuracy: '4 µm', 'Scan Time': '9 s per arch', 'Light Source': 'Blue LED' },
-    features: ['High accuracy', 'Fast scanning', 'Articulator support'],
-    benefits: ['Reliable digital models', 'Quick turnaround', 'Open output'],
+      'A preshaded high-translucent zirconia that removes the coloring step from the workflow. Consistent shade through the disc saves time while delivering dependable framework strength.',
+    specs: { Family: 'Preshade', Aesthetic: 'High-translucent', 'Bending Strength': '≥1100 MPa', 'Light Transmittance': '38%', 'Sintering Temp': '1530 °C', Shades: 'VITA 16 + BL1–BL3' },
+    features: ['Preshaded — no dipping or coloring', 'Time-saving, economical workflow', 'Consistent shade through the disc', 'Copings and frameworks'],
+    benefits: ['Faster turnaround', 'Predictable shade', 'Lower processing cost'],
     featured: false,
-    variants: {
-      key: 'Accuracy Class',
-      values: ['Standard', 'High', 'Ultra'],
-    },
   },
   {
-    slug: 'glazing-furnace',
-    name: 'Ceramic Glazing Furnace',
-    category: 'dental-equipment',
-    shortDescription:
-      'Vacuum glazing and firing furnace for ceramics and lithium disilicate restorations.',
+    slug: 'stp-color',
+    name: 'STP Color Zirconia',
+    category: 'preshade-zirconia',
+    shortDescription: 'Preshaded super-translucent zirconia for full-contour crowns and bridges.',
     description:
-      'A precise vacuum firing furnace for glazing, staining, and firing ceramic restorations, with consistent temperature control for predictable esthetic results.',
-    specs: { 'Max Temperature': '1200 °C', Vacuum: 'Yes', Programs: 'Up to 200' },
-    features: ['Vacuum firing', 'Precise control', 'Large program memory'],
-    benefits: ['Consistent glazes', 'Reliable results', 'Versatile programs'],
+      'A preshaded super-translucent zirconia for full-contour crowns and bridges. Colored consistently through the disc for accurate, easy-to-handle results.',
+    specs: { Family: 'Preshade', Aesthetic: 'Super-translucent', 'Bending Strength': '≥1000 MPa', 'Light Transmittance': '43%', 'Sintering Temp': '1530 °C', Shades: 'VITA 16 + BL1–BL3' },
+    features: ['Preshaded for accurate color', 'Full-contour crowns & bridges', 'Easy to handle', 'Consistent shade'],
+    benefits: ['Accurate shade matching', 'Streamlined workflow', 'Reliable esthetics'],
+    featured: true,
+  },
+  {
+    slug: 'sht-color',
+    name: 'SHT Color Zirconia',
+    category: 'preshade-zirconia',
+    shortDescription: 'Preshaded super-high-translucent zirconia for esthetic full-contour work.',
+    description:
+      'A preshaded super-high-translucent zirconia combining lifelike translucency with an accurate, consistent shade for full-contour crowns and bridges.',
+    specs: { Family: 'Preshade', Aesthetic: 'Super-high-translucent', 'Bending Strength': '≥1000 MPa', 'Light Transmittance': '45%', 'Sintering Temp': '1450 °C', Shades: 'VITA 16 + BL1–BL3' },
+    features: ['Preshaded high translucency', 'Full-contour crowns & bridges', 'Consistent, accurate shade', 'Efficient sintering'],
+    benefits: ['Lifelike esthetics', 'Faster turnaround', 'Predictable color'],
     featured: false,
-    variants: {
-      key: 'Model',
-      values: ['Basic', 'Plus', 'Touch'],
-    },
   },
 
-  // ---------------- Laboratory Tools ----------------
+  // ---------------- Multilayer ----------------
   {
-    slug: 'zirconia-bur-set',
-    name: 'Zirconia Adjustment Bur Set',
-    category: 'laboratory-tools',
-    shortDescription:
-      'Diamond-coated bur set for fast, smooth adjustment of sintered zirconia restorations.',
+    slug: 'st-multilayer',
+    name: 'ST Multilayer Zirconia',
+    category: 'multilayer-zirconia',
+    shortDescription: 'Super-translucent multilayer zirconia with a natural color gradient.',
     description:
-      'A set of diamond-coated rotary burs designed for efficient grinding and contouring of sintered zirconia with minimal chipping and a smooth finish.',
-    specs: { 'Shank Diameter': '2.35 mm', Grit: 'Coarse to fine', 'Pieces': '6' },
-    features: ['Diamond coated', 'Low chipping', 'Long lifespan'],
-    benefits: ['Faster adjustments', 'Smoother surfaces', 'Reduced remakes'],
-    featured: false,
-    variants: {
-      key: 'Grit',
-      values: ['Coarse', 'Medium', 'Fine', 'Extra Fine', 'Super Coarse'],
-    },
-  },
-  {
-    slug: 'polishing-kit',
-    name: 'Ceramic Polishing Kit',
-    category: 'laboratory-tools',
-    shortDescription:
-      'Multi-stage polishing kit for high-luster finishing of ceramic and zirconia restorations.',
-    description:
-      'A staged polishing kit with silicone polishers and diamond paste for achieving a high-luster, glaze-like finish on ceramic and zirconia restorations without a firing cycle.',
-    specs: { Stages: '3', 'Shank Diameter': '2.35 mm', Pieces: '9' },
-    features: ['Three-stage system', 'High luster', 'Heat resistant'],
-    benefits: ['Glaze-free polishing', 'Time savings', 'Esthetic shine'],
+      'A super-translucent multilayer zirconia with a built-in color gradient that removes the dyeing step. High strength makes it well suited to posterior full-contour restorations.',
+    specs: { Family: 'Multilayer', Aesthetic: 'Super-translucent', 'Bending Strength': '≥1100 MPa', 'Light Transmittance': '43%', 'Sintering Temp': '1530 °C', Shades: 'VITA 16 + BL1–BL4' },
+    features: ['Natural color gradient — no dyeing', 'High strength for posterior loads', 'Seamless cervical-to-incisal transition', 'Screw-retained bridges'],
+    benefits: ['Esthetic results with less effort', 'Durable posterior restorations', 'Consistent gradient'],
     featured: true,
-    variants: {
-      key: 'Shape',
-      values: ['Flame', 'Wheel', 'Cup', 'Point', 'Lens', 'Disc'],
-    },
   },
   {
-    slug: 'articulator',
-    name: 'Semi-Adjustable Articulator',
-    category: 'laboratory-tools',
-    shortDescription:
-      'Precision semi-adjustable articulator for accurate occlusal analysis and restoration.',
+    slug: 'ut-multilayer',
+    name: 'UT Multilayer Zirconia',
+    category: 'multilayer-zirconia',
+    shortDescription: 'Ultra-translucent multilayer zirconia for esthetic anterior restorations.',
     description:
-      'A rigid, precision semi-adjustable articulator with adjustable condylar guidance for reliable occlusal registration and restoration fabrication.',
-    specs: { Type: 'Arcon', 'Condylar Guidance': 'Adjustable', Material: 'Aluminum alloy' },
-    features: ['Adjustable condylar path', 'Magnetic mounting plates', 'Rigid frame'],
-    benefits: ['Accurate occlusion', 'Repeatable mounting', 'Durable construction'],
+      'An ultra-translucent multilayer zirconia with a natural gradient and superior glossy translucency, ideal for anterior crowns, veneers, and esthetic full-contour bridges.',
+    specs: { Family: 'Multilayer', Aesthetic: 'Ultra-translucent', 'Bending Strength': '≥1000 MPa', 'Light Transmittance': '49%', 'Sintering Temp': '1500 °C', Shades: 'VITA 16 + BL1–BL4' },
+    features: ['Natural color gradient', 'Superior glossy translucency', 'Ideal for anterior work', 'Suitable for veneers'],
+    benefits: ['Outstanding anterior esthetics', 'No dyeing step', 'Natural light behavior'],
     featured: false,
-    variants: {
-      key: 'Mounting',
-      values: ['Magnetic', 'Screw', 'Split-cast', 'Plateless'],
-    },
   },
   {
-    slug: 'wax-carving-set',
-    name: 'Wax Carving Instrument Set',
-    category: 'laboratory-tools',
-    shortDescription:
-      'Stainless steel wax carving instruments for precise waxing and contouring.',
+    slug: 'sht-multilayer',
+    name: 'SHT Multilayer Zirconia',
+    category: 'multilayer-zirconia',
+    shortDescription: 'Super-high-translucent multilayer zirconia for anterior and posterior work.',
     description:
-      'A set of finely balanced stainless steel waxing instruments with polished working ends for detailed wax-up, carving, and contouring.',
-    specs: { Material: 'Stainless steel', Pieces: '6', Handle: 'Knurled' },
-    features: ['Polished tips', 'Balanced handles', 'Corrosion resistant'],
-    benefits: ['Precise wax control', 'Comfortable handling', 'Long-lasting'],
+      'A super-high-translucent multilayer zirconia with a natural gradient and high strength, versatile across anterior and posterior full-contour restorations.',
+    specs: { Family: 'Multilayer', Aesthetic: 'Super-high-translucent', 'Bending Strength': '≥1000 MPa', 'Light Transmittance': '45%', 'Sintering Temp': '1500 °C', Shades: 'VITA 16 + BL1–BL4' },
+    features: ['Natural color gradient', 'High strength', 'Anterior and posterior restorations', 'No dyeing step'],
+    benefits: ['Versatile esthetics', 'Reliable strength', 'Streamlined workflow'],
     featured: false,
-    variants: {
-      key: 'Tip Style',
-      values: ['PKT', 'Beavertail', 'Discoid-Cleoid', 'Ball Burnisher'],
-    },
   },
-
-  // ---------------- Implant Solutions ----------------
   {
-    slug: 'titanium-base',
-    name: 'Titanium Base (Ti-Base)',
-    category: 'implant-solutions',
-    shortDescription:
-      'Precision titanium base for bonding hybrid abutments and screw-retained restorations.',
+    slug: '3d-plus-multilayer',
+    name: '3D Plus Multilayer Zirconia',
+    category: 'multilayer-zirconia',
+    shortDescription: 'Multilayer zirconia with color and strength gradients for any indication.',
     description:
-      'A medical-grade titanium base for fabricating cement- and screw-retained hybrid abutments and crowns, with a precise connection geometry for a reliable, sealed interface.',
-    specs: { Material: 'Grade 5 titanium (Ti-6Al-4V)', Connection: 'Conical', 'Gingival Height': '1 mm' },
-    features: ['Precision connection', 'Anti-rotation', 'Bondable surface'],
-    benefits: ['Reliable fit', 'Versatile restorations', 'Strong bond'],
+      'A multilayer zirconia with a multi-layer color gradient and a strength gradient across the disc, balancing translucency and strength for both anterior and posterior restorations.',
+    specs: { Family: 'Multilayer', Aesthetic: 'Multilayer gradient', 'Bending Strength': '700–1200 MPa', 'Light Transmittance': '45–57%', 'Sintering Temp': '1500 °C', Shades: 'VITA 16 + BL1–BL4' },
+    features: ['Multi-layer color gradient', 'Strength gradient across layers', 'Strong translucency balance', 'Anterior and posterior restorations'],
+    benefits: ['One disc, many indications', 'Esthetics with strength', 'Natural transitions'],
+    featured: false,
+  },
+  {
+    slug: '4d-plus-multilayer',
+    name: '4D Plus Multilayer Zirconia',
+    category: 'multilayer-zirconia',
+    shortDescription: 'Four-dimensional gradient zirconia — color, strength, translucency, and fracture.',
+    description:
+      'A four-dimensional gradient zirconia transitioning in color, strength, translucency, and fracture behavior across the disc, with high fracture toughness for chip-resistant anterior and posterior restorations.',
+    specs: { Family: 'Multilayer', Aesthetic: '4D gradient', 'Bending Strength': '700–1200 MPa', 'Light Transmittance': '45–57%', 'Sintering Temp': '1500 °C', Shades: 'VITA 16 + BL1–BL4' },
+    features: ['4D gradient: color, strength, translucency & fracture', 'High fracture toughness', 'Chip-resistant', 'Anterior and posterior restorations'],
+    benefits: ['Premium natural esthetics', 'Durable, chip-resistant results', 'Versatile across the arch'],
     featured: true,
-    variants: {
-      key: 'Platform',
-      values: ['NP (3.5)', 'RP (4.3)', 'WP (5.0)', 'NC', 'RC'],
-    },
   },
   {
-    slug: 'implant-analog',
-    name: 'Implant Lab Analog',
-    category: 'implant-solutions',
-    shortDescription:
-      'Durable lab analog replicating the implant connection for accurate model work.',
+    slug: '4d-pro-multilayer',
+    name: '4D Pro Multilayer Zirconia (7-Layer)',
+    category: 'multilayer-zirconia',
+    shortDescription: 'Seven-layer gradient zirconia — our most esthetic, all-in-one block.',
     description:
-      'A precision lab analog that replicates the implant connection in the working model, enabling accurate fabrication of implant-supported restorations.',
-    specs: { Material: 'Stainless steel', Connection: 'Internal hex', Compatibility: 'Major systems' },
-    features: ['Precise replication', 'Durable', 'Wide compatibility'],
-    benefits: ['Accurate models', 'Reliable fit', 'Reusable'],
-    featured: false,
-    variants: {
-      key: 'Platform',
-      values: ['NP (3.5)', 'RP (4.3)', 'WP (5.0)', 'NC', 'RC'],
-    },
-  },
-  {
-    slug: 'scan-body',
-    name: 'Implant Scan Body',
-    category: 'implant-solutions',
-    shortDescription:
-      'Digital scan body for accurate intraoral and lab capture of implant position.',
-    description:
-      'A precision scan body engineered for reliable digital capture of implant position and orientation, with a matte surface optimized for intraoral and desktop scanners.',
-    specs: { Material: 'PEEK / titanium', 'Scan Surface': 'Matte', Reusable: 'Yes' },
-    features: ['Anti-glare surface', 'Accurate geometry', 'Autoclavable'],
-    benefits: ['Reliable digital position', 'Fewer rescans', 'Long service life'],
+      'Our most advanced multilayer zirconia, with a seven-layer natural gradient in color, translucency, and fracture toughness. Strength reaches up to 1200 MPa with up to 57% translucency for premium anterior and posterior restorations.',
+    specs: { Family: 'Multilayer', Aesthetic: 'All-in-one 7-layer gradient', 'Bending Strength': '700–1200 MPa', 'Light Transmittance': '43–57%', 'Sintering Temp': '1500 °C', Shades: 'VITA 16 + BL1–BL4' },
+    features: ['Seven-layer natural gradient', 'Color, translucency & fracture-toughness gradient', 'Up to 1200 MPa and up to 57% translucency', 'Anterior and posterior restorations'],
+    benefits: ['Top-tier natural esthetics', 'Strength and beauty in one disc', 'Lifelike multi-zone transitions'],
     featured: true,
-    variants: {
-      key: 'Platform',
-      values: ['NP (3.5)', 'RP (4.3)', 'WP (5.0)', 'NC', 'RC'],
-    },
-  },
-  {
-    slug: 'multi-unit-abutment',
-    name: 'Multi-Unit Abutment',
-    category: 'implant-solutions',
-    shortDescription:
-      'Angled and straight multi-unit abutments for screw-retained full-arch restorations.',
-    description:
-      'Titanium multi-unit abutments for full-arch and multi-unit screw-retained restorations, available in straight and angled profiles to correct implant divergence.',
-    specs: { Material: 'Grade 5 titanium', Type: 'Screw-retained', 'Cuff Heights': 'Multiple' },
-    features: ['Straight and angled', 'Divergence correction', 'Durable titanium'],
-    benefits: ['Passive full-arch fit', 'Flexible angulation', 'Predictable results'],
-    featured: false,
-    variants: {
-      key: 'Angle',
-      values: ['0°', '17°', '30°', '45°'],
-    },
-  },
-
-  // ---------------- Consumables ----------------
-  {
-    slug: 'phosphate-investment',
-    name: 'Phosphate-Bonded Investment',
-    category: 'consumables',
-    shortDescription:
-      'High-precision phosphate investment for press ceramics and alloy casting.',
-    description:
-      'A phosphate-bonded investment formulated for accurate expansion control in pressed ceramic and alloy casting workflows, delivering smooth surfaces and precise fit.',
-    specs: { Type: 'Phosphate-bonded', 'Working Time': '5 min', 'Pack Size': '160 g sachets' },
-    features: ['Controlled expansion', 'Smooth surface', 'Fast setting'],
-    benefits: ['Accurate fit', 'Clean castings', 'Reliable results'],
-    featured: false,
-    variants: {
-      key: 'Pack',
-      values: ['80 g', '160 g', 'Bulk 4.5 kg'],
-    },
-  },
-  {
-    slug: 'modeling-wax',
-    name: 'Dental Modeling Wax',
-    category: 'consumables',
-    shortDescription:
-      'Smooth-flowing modeling wax for wax-ups, copings, and pattern fabrication.',
-    description:
-      'A residue-free modeling wax with excellent carving and flow characteristics for precise wax-ups, copings, and burnout patterns.',
-    specs: { Type: 'Modeling wax', 'Melting Point': '58 °C', 'Pack Size': '75 g' },
-    features: ['Smooth flow', 'Clean burnout', 'Stable carving'],
-    benefits: ['Detailed wax-ups', 'Residue-free casting', 'Easy handling'],
-    featured: false,
-    variants: {
-      key: 'Color',
-      values: ['Ivory', 'Blue', 'Green', 'Red', 'Grey'],
-    },
-  },
-  {
-    slug: 'nitrile-gloves',
-    name: 'Nitrile Examination Gloves',
-    category: 'consumables',
-    shortDescription:
-      'Powder-free nitrile gloves offering durable protection and tactile sensitivity.',
-    description:
-      'Powder-free nitrile examination gloves providing strong chemical resistance, comfort, and tactile sensitivity for everyday lab and clinical use.',
-    specs: { Material: 'Nitrile', Powder: 'Free', 'Box Quantity': '100' },
-    features: ['Powder-free', 'Chemical resistant', 'Textured grip'],
-    benefits: ['Reliable protection', 'Comfortable fit', 'Good dexterity'],
-    featured: false,
-    variants: {
-      key: 'Size',
-      values: ['X-Small', 'Small', 'Medium', 'Large', 'X-Large'],
-    },
-  },
-  {
-    slug: 'separating-liquid',
-    name: 'Plaster Separating Liquid',
-    category: 'consumables',
-    shortDescription:
-      'Fast-drying separating liquid for clean release between plaster and acrylic.',
-    description:
-      'A reliable separating medium that forms a thin, clean film for easy release between plaster, acrylic, and wax surfaces without surface defects.',
-    specs: { Type: 'Alginate-based', Volume: '1 L', 'Drying Time': '3 min' },
-    features: ['Fast drying', 'Thin film', 'Clean release'],
-    benefits: ['Smooth surfaces', 'Easy deflasking', 'Consistent results'],
-    featured: false,
-    variants: {
-      key: 'Volume',
-      values: ['250 ml', '500 ml', '1 L'],
-    },
-  },
-
-  // ---------------- Digital Dentistry Products ----------------
-  {
-    slug: 'model-resin',
-    name: 'Dental Model Resin',
-    category: 'digital-dentistry',
-    shortDescription:
-      'High-accuracy 3D printing resin for precise, dimensionally stable dental models.',
-    description:
-      'A fast-curing photopolymer resin engineered for highly accurate, dimensionally stable dental models with a smooth, matte surface ideal for thermoforming and restoration fabrication.',
-    specs: { Type: 'Model resin', 'Layer Height': '50 µm', Compatibility: 'DLP / LCD' },
-    features: ['High accuracy', 'Low shrinkage', 'Matte finish'],
-    benefits: ['Precise models', 'Stable over time', 'Easy to read margins'],
-    featured: true,
-    variants: {
-      key: 'Shade',
-      values: ['Sandstone', 'Grey', 'Beige', 'Ivory', 'Tan', 'White'],
-    },
-  },
-  {
-    slug: 'surgical-guide-resin',
-    name: 'Surgical Guide Resin',
-    category: 'digital-dentistry',
-    shortDescription:
-      'Biocompatible, autoclavable resin for accurate implant surgical guides.',
-    description:
-      'A Class I biocompatible resin for printing accurate, transparent implant surgical guides that withstand standard autoclave sterilization.',
-    specs: { Type: 'Surgical guide resin', Biocompatibility: 'Class I', Sterilization: 'Autoclavable' },
-    features: ['Biocompatible', 'Transparent', 'Autoclavable'],
-    benefits: ['Accurate guided surgery', 'Clear visibility', 'Sterilizable'],
-    featured: false,
-    variants: {
-      key: 'Volume',
-      values: ['500 g', '1 kg', '2 kg'],
-    },
-  },
-  {
-    slug: 'splint-resin',
-    name: 'Flexible Splint Resin',
-    category: 'digital-dentistry',
-    shortDescription:
-      'Durable, transparent resin for night guards and occlusal splints.',
-    description:
-      'A tough, transparent biocompatible resin for printing comfortable, fracture-resistant occlusal splints and night guards with excellent clarity.',
-    specs: { Type: 'Splint resin', Biocompatibility: 'Class IIa', Finish: 'Transparent' },
-    features: ['Fracture resistant', 'Transparent', 'Comfortable'],
-    benefits: ['Durable appliances', 'Patient comfort', 'Esthetic clarity'],
-    featured: false,
-    variants: {
-      key: 'Volume',
-      values: ['500 g', '1 kg', '2 kg'],
-    },
-  },
-  {
-    slug: 'scanner-spray',
-    name: 'Anti-Glare Scanning Spray',
-    category: 'digital-dentistry',
-    shortDescription:
-      'Fine, washable scanning spray to reduce glare on reflective surfaces.',
-    description:
-      'A finely atomized, easily removable scanning spray that reduces glare on shiny surfaces for cleaner, more accurate digital captures.',
-    specs: { Type: 'Scanning aid', Volume: '75 ml', Removal: 'Water-soluble' },
-    features: ['Fine particle size', 'Even coating', 'Easy removal'],
-    benefits: ['Cleaner scans', 'Fewer artifacts', 'Quick cleanup'],
-    featured: false,
-    variants: {
-      key: 'Volume',
-      values: ['35 ml', '75 ml', '150 ml'],
-    },
   },
 ]
 
-// ---------------------------------------------------------------------------
-// Generator: expand each base product's variants into full catalog entries.
-// Builds related ids within the same category.
-// ---------------------------------------------------------------------------
 function buildProducts() {
-  const expanded = []
-  let id = 1
-  let seed = 1
+  const expanded = base.map((b, i) => ({
+    ...b,
+    id: i + 1,
+    image: imageForSlug[b.slug] || zirconiaImages.molars,
+    images: [imageForSlug[b.slug] || zirconiaImages.molars],
+  }))
 
-  for (const b of base) {
-    const { variants, ...rest } = b
-    const values = variants ? variants.values : ['Standard']
-    const variantKey = variants ? variants.key : 'Variant'
-
-    values.forEach((v, i) => {
-      const isVariant = !!variants
-      const slug = isVariant
-        ? `${b.slug}-${v.toString().toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')}`
-        : b.slug
-      const name = isVariant ? `${b.name} — ${v}` : b.name
-      const images = [img(seed++), img(seed++), img(seed++)]
-
-      expanded.push({
-        ...rest,
-        id: id++,
-        slug,
-        name,
-        images,
-        shortDescription: b.shortDescription,
-        description: b.description,
-        specs: isVariant ? { ...b.specs, [variantKey]: v } : { ...b.specs },
-        features: [...b.features],
-        benefits: [...b.benefits],
-        category: b.category,
-        featured: b.featured && i === 0,
-        relatedIds: [],
-        _baseSlug: b.slug,
-      })
-    })
-  }
-
-  // Compute relatedIds: other products in the same category (prefer same base family).
+  // relatedIds: other discs in the same family.
   for (const p of expanded) {
-    const sameCategory = expanded.filter(
-      (o) => o.id !== p.id && o.category === p.category,
-    )
-    const sameFamily = sameCategory.filter((o) => o._baseSlug !== p._baseSlug)
-    const pool = sameFamily.length >= 3 ? sameFamily : sameCategory
-    p.relatedIds = pool.slice(0, 4).map((o) => o.id)
-    delete p._baseSlug
+    p.relatedIds = expanded
+      .filter((o) => o.id !== p.id && o.category === p.category)
+      .slice(0, 3)
+      .map((o) => o.id)
   }
-
   return expanded
 }
 

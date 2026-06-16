@@ -14,6 +14,8 @@ test('product slugs are unique', () => {
   const s = products.map((p) => p.slug)
   expect(new Set(s).size).toBe(s.length)
 })
-test('there are at least 120 products', () => {
-  expect(products.length).toBeGreaterThanOrEqual(120)
+test('the zirconia catalog lists every disc family', () => {
+  expect(products.length).toBeGreaterThanOrEqual(12)
+  const families = new Set(products.map((p) => p.category))
+  expect(families).toEqual(new Set(['white-zirconia', 'preshade-zirconia', 'multilayer-zirconia']))
 })

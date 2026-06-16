@@ -1,5 +1,4 @@
 import Seo from '../components/Seo'
-import { Section } from '../components/ui/Section'
 import { Container } from '../components/ui/Container'
 import { Button } from '../components/ui/Button'
 
@@ -7,18 +6,23 @@ export default function NotFound() {
   return (
     <>
       <Seo title="Page Not Found" />
-      <Section>
-        <Container className="text-center">
-          <p className="font-heading text-6xl font-bold text-teal">404</p>
-          <h1 className="mt-4 font-heading text-3xl font-bold text-navy">Page Not Found</h1>
-          <p className="mt-3 font-body text-navy/70">
-            Sorry, the page you are looking for does not exist.
+      <section className="relative flex min-h-[80vh] items-center overflow-hidden bg-ink text-white">
+        <div aria-hidden="true" className="absolute inset-0 bg-grid-faint bg-[size:44px_44px] opacity-[0.12]" />
+        <div
+          aria-hidden="true"
+          className="absolute left-1/2 top-1/4 h-72 w-[640px] -translate-x-1/2 rounded-full bg-[radial-gradient(closest-side,rgba(0,166,166,0.25),transparent)] blur-2xl"
+        />
+        <Container className="relative text-center">
+          <p className="font-heading text-7xl font-black tracking-tightest text-white/90 md:text-8xl">404</p>
+          <h1 className="mt-4 font-heading text-2xl font-bold tracking-tight md:text-3xl">Page not found</h1>
+          <p className="mx-auto mt-3 max-w-md font-body text-white/60">
+            Sorry, the page you are looking for doesn&apos;t exist or has moved.
           </p>
-          <Button to="/" variant="primary" size="md" className="mt-8">
+          <Button to="/" variant="accent" size="lg" className="mt-8" withArrow>
             Back to Home
           </Button>
         </Container>
-      </Section>
+      </section>
     </>
   )
 }

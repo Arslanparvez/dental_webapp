@@ -1,17 +1,21 @@
 import { cn } from '../../lib/cn'
 
 const tones = {
-  teal: 'bg-teal/10 text-teal',
-  mint: 'bg-mint/20 text-navy',
-  sky: 'bg-sky text-navy',
-  navy: 'bg-navy/10 text-navy',
+  teal: 'bg-teal/10 text-teal-600 border border-teal/20',
+  neutral: 'bg-zinc-100 text-zinc-600 border border-zinc-200',
+  ink: 'bg-ink text-white',
+  outline: 'border border-zinc-200 text-zinc-600',
+  // legacy aliases
+  mint: 'bg-teal/10 text-teal-600 border border-teal/20',
+  navy: 'bg-ink text-white',
+  sky: 'bg-zinc-100 text-zinc-600 border border-zinc-200',
 }
 
 export function Badge({ tone = 'teal', className, children, ...rest }) {
   return (
     <span
       className={cn(
-        'inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold',
+        'inline-flex items-center rounded-full px-2.5 py-1 text-xs font-semibold',
         tones[tone] || tones.teal,
         className
       )}

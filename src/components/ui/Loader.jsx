@@ -5,28 +5,17 @@ export function Loader() {
   const reduced = useReducedMotion()
 
   return (
-    <div
-      role="status"
-      className="flex min-h-[60vh] w-full flex-col items-center justify-center gap-4"
-    >
-      <span className="relative inline-flex h-14 w-14">
-        {/* Track */}
-        <span className="absolute inset-0 rounded-full border-4 border-lightgray" />
-        {/* Spinning arc */}
+    <div role="status" className="flex min-h-[60vh] w-full flex-col items-center justify-center gap-4">
+      <span className="relative inline-flex h-10 w-10">
+        <span className="absolute inset-0 rounded-full border-2 border-zinc-200" />
         <span
           className={cn(
-            'absolute inset-0 rounded-full border-4 border-transparent border-t-teal border-r-teal',
+            'absolute inset-0 rounded-full border-2 border-transparent border-t-teal',
             !reduced && 'animate-spin'
           )}
         />
-        {/* Brand mark */}
-        <span className="absolute inset-0 flex items-center justify-center">
-          <svg viewBox="0 0 24 24" className="h-6 w-6 text-navy" fill="currentColor" aria-hidden="true">
-            <path d="M11 3h2v8h8v2h-8v8h-2v-8H3v-2h8z" />
-          </svg>
-        </span>
       </span>
-      <span className="sr-only">Loading…</span>
+      <span className="font-heading text-sm font-medium tracking-tight text-zinc-400">Loading…</span>
     </div>
   )
 }

@@ -4,8 +4,8 @@ export function Card({ as: Tag = 'div', hoverable = false, className, children, 
   return (
     <Tag
       className={cn(
-        'rounded-2xl border border-black/5 bg-white shadow-sm transition duration-200',
-        hoverable && 'hover:-translate-y-1 hover:shadow-xl',
+        'rounded-2xl border border-zinc-200 bg-white shadow-soft transition-all duration-300',
+        hoverable && 'hover:-translate-y-1 hover:border-zinc-300 hover:shadow-lift',
         className
       )}
       {...rest}

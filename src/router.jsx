@@ -1,16 +1,11 @@
 import { lazy } from 'react'
-import { createBrowserRouter } from 'react-router-dom'
+import { createBrowserRouter, Navigate } from 'react-router-dom'
 import { Layout } from './components/layout/Layout'
 
 const Home = lazy(() => import('./pages/Home'))
 const About = lazy(() => import('./pages/About'))
 const Services = lazy(() => import('./pages/Services'))
-const Products = lazy(() => import('./pages/Products'))
-const ProductDetail = lazy(() => import('./pages/ProductDetail'))
-const Philippines = lazy(() => import('./pages/Philippines'))
-const Gallery = lazy(() => import('./pages/Gallery'))
-const Blog = lazy(() => import('./pages/Blog'))
-const BlogPost = lazy(() => import('./pages/BlogPost'))
+const Materials = lazy(() => import('./pages/Materials'))
 const Contact = lazy(() => import('./pages/Contact'))
 const NotFound = lazy(() => import('./pages/NotFound'))
 
@@ -22,12 +17,9 @@ export const router = createBrowserRouter([
       { index: true, element: <Home /> },
       { path: 'about', element: <About /> },
       { path: 'services', element: <Services /> },
-      { path: 'products', element: <Products /> },
-      { path: 'products/:slug', element: <ProductDetail /> },
-      { path: 'philippines', element: <Philippines /> },
-      { path: 'gallery', element: <Gallery /> },
-      { path: 'blog', element: <Blog /> },
-      { path: 'blog/:slug', element: <BlogPost /> },
+      { path: 'materials', element: <Materials /> },
+      // Redirect the old catalog path to the new Materials page.
+      { path: 'products', element: <Navigate to="/materials" replace /> },
       { path: 'contact', element: <Contact /> },
       { path: '*', element: <NotFound /> },
     ],

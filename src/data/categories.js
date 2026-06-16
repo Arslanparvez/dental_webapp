@@ -1,44 +1,23 @@
 export const categories = [
   {
-    slug: 'cadcam-materials',
-    name: 'CAD/CAM Materials',
+    slug: 'white-zirconia',
+    name: 'White',
     description:
-      'Milling blocks, discs, and blanks engineered for digital restoration workflows — zirconia, lithium disilicate, PMMA, and more.',
+      'Uncolored high-strength discs — from high-translucent framework grades to ultra-translucent anterior blocks, colored with shade liquids.',
     icon: 'cube',
   },
   {
-    slug: 'dental-equipment',
-    name: 'Dental Equipment',
+    slug: 'preshade-zirconia',
+    name: 'Preshade',
     description:
-      'Milling machines, sintering furnaces, scanners, and finishing units that power the modern digital dental laboratory.',
-    icon: 'cpu',
+      'Pre-shaded discs colored consistently through the blank — no dipping step, faster and more predictable shade matching.',
+    icon: 'crown',
   },
   {
-    slug: 'laboratory-tools',
-    name: 'Laboratory Tools',
+    slug: 'multilayer-zirconia',
+    name: 'Multilayer',
     description:
-      'Burs, polishers, articulators, and hand instruments for precise model work and restoration finishing.',
-    icon: 'wrench',
-  },
-  {
-    slug: 'implant-solutions',
-    name: 'Implant Solutions',
-    description:
-      'Implant analogs, titanium bases, scan bodies, and abutment components for restorative implant dentistry.',
-    icon: 'screw',
-  },
-  {
-    slug: 'consumables',
-    name: 'Consumables',
-    description:
-      'Everyday lab essentials — investment, waxes, liquids, gloves, and disposables to keep production running.',
-    icon: 'box',
-  },
-  {
-    slug: 'digital-dentistry',
-    name: 'Digital Dentistry Products',
-    description:
-      'Intraoral scanner accessories, 3D printing resins, and digital workflow components for chairside-to-lab dentistry.',
+      'Natural multi-layer gradient discs — color, translucency, and strength transitions built in, up to a 7-layer all-in-one block.',
     icon: 'scan',
   },
 ]

@@ -8,12 +8,12 @@ export function ServicesGrid() {
     <div>
       <SectionHeading
         eyebrow="What We Do"
-        title="Our Services"
-        subtitle="From digital design to dependable supply, we support dental laboratories and clinics at every stage of the modern workflow."
+        title="Design services for every indication"
+        subtitle="From single crowns to full-arch implant cases, our CAD/CAM team delivers manufacturer-ready designs in the format your production needs."
       />
-      <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {services.map((service, i) => (
-          <Reveal key={service.id} delay={i * 0.08}>
+          <Reveal key={service.id} delay={i * 0.06}>
             <ServiceCard service={service} />
           </Reveal>
         ))}

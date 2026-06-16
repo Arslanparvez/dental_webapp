@@ -1,8 +1,8 @@
 export const SITE = {
-  name: 'Digiart Centre',
-  url: 'https://www.digiartcentre.com',
+  name: 'Digiart Design Services',
+  url: 'https://www.digiartdesignservices.com',
   defaultDescription:
-    'Digiart Centre delivers advanced dental CAD/CAM design, trading solutions, and premium dental products for laboratories worldwide.',
+    'Digiart Design Services is a digital dental CAD/CAM design studio in Dubai — crown & bridge, implant, All-on-X, removable, surgical guide, and appliance design for laboratories and clinics worldwide.',
   ogImage: '/og-image.jpg',
 }
 

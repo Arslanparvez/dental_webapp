@@ -1,35 +1,40 @@
 import { testimonials } from '../../data/testimonials'
 import { SectionHeading } from '../ui/SectionHeading'
-import { Carousel } from '../ui/Carousel'
-import { Card } from '../ui/Card'
-import { Button } from '../ui/Button'
-import { FadeIn } from '../ui/FadeIn'
+import { Reveal } from '../ui/Reveal'
 import { Icon } from '../ui/Icon'
+
+const initials = (name) =>
+  name
+    .replace(/^Dr\.\s*/, '')
+    .split(' ')
+    .map((p) => p[0])
+    .slice(0, 2)
+    .join('')
+    .toUpperCase()
 
 function TestimonialCard({ item }) {
   return (
-    <Card className="flex h-full flex-col p-8">
-      <Icon name="star" size={28} className="text-mint" />
-      <blockquote className="mt-5 flex-1 font-body text-base italic leading-relaxed text-navy/80">
+    <figure className="flex h-full flex-col rounded-2xl border border-zinc-200 bg-white p-7 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-lift">
+      <div className="flex gap-0.5 text-teal" aria-hidden="true">
+        {Array.from({ length: 5 }).map((_, i) => (
+          <Icon key={i} name="star" size={16} />
+        ))}
+      </div>
+      <blockquote className="mt-4 flex-1 font-body text-[15px] leading-relaxed text-zinc-600">
         “{item.quote}”
       </blockquote>
-      <div className="mt-6 flex items-center gap-4">
-        <img
-          src={item.photo}
-          alt={item.name}
-          loading="lazy"
-          width={56}
-          height={56}
-          className="h-14 w-14 rounded-full object-cover"
-        />
+      <figcaption className="mt-6 flex items-center gap-3 border-t border-zinc-100 pt-5">
+        <span className="flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br from-ink to-teal font-heading text-sm font-bold text-white">
+          {initials(item.name)}
+        </span>
         <div>
-          <p className="font-heading font-semibold text-navy">{item.name}</p>
-          <p className="text-sm text-navy/60">
+          <p className="font-heading text-sm font-semibold text-ink">{item.name}</p>
+          <p className="text-sm text-zinc-500">
             {item.role}, {item.company}
           </p>
         </div>
-      </div>
-    </Card>
+      </figcaption>
+    </figure>
   )
 }
 
@@ -38,21 +43,15 @@ export function TestimonialsSlider() {
     <div>
       <SectionHeading
         eyebrow="Client Stories"
-        title="Trusted by Dental Professionals"
-        subtitle="Laboratories, clinics, and dentists worldwide rely on Digiart Centre every day."
+        title="Trusted by dental professionals"
+        subtitle="Laboratories, clinics, and dentists worldwide rely on Digiart Design Services every day."
       />
-      <FadeIn className="mt-12">
-        <Carousel
-          items={testimonials}
-          perView={{ base: 3 }}
-          ariaLabel="Client testimonials"
-          renderItem={(item) => <TestimonialCard item={item} />}
-        />
-      </FadeIn>
-      <div className="mt-10 flex justify-center">
-        <Button to="/contact" variant="primary" size="lg">
-          Become a partner
-        </Button>
+      <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {testimonials.map((item, i) => (
+          <Reveal key={item.id} delay={(i % 3) * 0.06}>
+            <TestimonialCard item={item} />
+          </Reveal>
+        ))}
       </div>
     </div>
   )
