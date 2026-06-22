@@ -39,8 +39,9 @@ export function MaterialCard({ product, onSelect }) {
           {product.shortDescription}
         </p>
         <div className="mt-4 flex flex-wrap gap-2 border-t border-zinc-100 pt-4">
-          <Badge tone="neutral">{product.specs.Aesthetic}</Badge>
-          <Badge tone="teal">{product.specs['Bending Strength']}</Badge>
+          {(product.badges || []).map((b, i) => (
+            <Badge key={b} tone={i === 0 ? 'neutral' : 'teal'}>{b}</Badge>
+          ))}
         </div>
         <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-teal-600 transition-all group-hover:gap-2.5">
           View specs

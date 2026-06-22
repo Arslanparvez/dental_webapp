@@ -14,15 +14,17 @@ test('product slugs are unique', () => {
   const s = products.map((p) => p.slug)
   expect(new Set(s).size).toBe(s.length)
 })
-test('the zirconia catalog lists every disc family', () => {
-  expect(products.length).toBe(6)
+test('the catalog covers every material family', () => {
+  expect(products.length).toBe(12)
   const families = new Set(products.map((p) => p.category))
-  expect(families).toEqual(new Set(['white-zirconia', 'preshade-zirconia', 'multilayer-zirconia']))
+  expect(families).toEqual(
+    new Set(['white-zirconia', 'preshade-zirconia', 'multilayer-zirconia', 'pmma', 'flexible-resin', 'lithium-disilicate'])
+  )
 })
-test('every product has an image and the required card specs', () => {
+test('every product has an image and two card badges', () => {
   for (const p of products) {
-    expect(p.image).toMatch(/^\/images\/zirconia\//)
-    expect(p.specs.Aesthetic).toBeTruthy()
-    expect(p.specs['Bending Strength']).toBeTruthy()
+    expect(p.image).toMatch(/^\/images\//)
+    expect(Array.isArray(p.badges)).toBe(true)
+    expect(p.badges.length).toBe(2)
   }
 })

@@ -7,7 +7,7 @@ export function ServiceCard({ service }) {
       to={`/services#${service.slug}`}
       className="group relative flex h-full flex-col rounded-2xl border border-zinc-200 bg-white p-7 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:border-zinc-300 hover:shadow-lift focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal focus-visible:ring-offset-2"
     >
-      <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-ink text-white transition-colors duration-300 group-hover:bg-teal">
+      <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-red text-white transition-colors duration-300 group-hover:bg-teal">
         <Icon name={service.icon} size={22} />
       </span>
       <h3 className="mt-5 font-heading text-lg font-semibold tracking-tight text-ink">{service.title}</h3>

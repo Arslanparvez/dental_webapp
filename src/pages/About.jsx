@@ -82,7 +82,7 @@ export default function About() {
           <div className="grid gap-6 md:grid-cols-2">
             <Reveal>
               <Card className="h-full p-8">
-                <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-ink text-white">
+                <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-red text-white">
                   <Icon name="precision" size={22} />
                 </span>
                 <h3 className="mt-5 font-heading text-xl font-semibold tracking-tight text-ink">Our Mission</h3>
@@ -94,7 +94,7 @@ export default function About() {
             </Reveal>
             <Reveal delay={0.1}>
               <Card className="h-full p-8">
-                <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-ink text-white">
+                <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-red text-white">
                   <Icon name="globe" size={22} />
                 </span>
                 <h3 className="mt-5 font-heading text-xl font-semibold tracking-tight text-ink">Our Vision</h3>
@@ -144,7 +144,7 @@ export default function About() {
             {team.map((member, i) => (
               <Reveal key={member.id} delay={(i % 4) * 0.05}>
                 <Card hoverable className="group h-full overflow-hidden">
-                  <div className="flex aspect-square w-full items-center justify-center bg-gradient-to-br from-ink to-teal">
+                  <div className="flex aspect-square w-full items-center justify-center bg-gradient-to-br from-red-600 to-teal">
                     <span className="font-heading text-4xl font-bold tracking-tight text-white/90">
                       {initials(member.name)}
                     </span>

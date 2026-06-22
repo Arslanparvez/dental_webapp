@@ -23,12 +23,12 @@ export function Hero() {
   const reduced = useReducedMotion()
 
   return (
-    <section className="relative overflow-hidden bg-ink text-white">
+    <section className="relative overflow-hidden bg-metallic-red-panel text-white">
       {/* Backdrop */}
       <div aria-hidden="true" className="absolute inset-0 bg-grid-faint bg-[size:48px_48px] opacity-[0.12]" />
       <div
         aria-hidden="true"
-        className="absolute left-1/2 top-0 h-[480px] w-[820px] -translate-x-1/2 rounded-full bg-[radial-gradient(closest-side,rgba(0,166,166,0.30),transparent)] blur-2xl"
+        className="absolute left-1/2 top-0 h-[480px] w-[820px] -translate-x-1/2 rounded-full bg-[radial-gradient(closest-side,rgba(255,255,255,0.12),transparent)] blur-2xl"
       />
       <div
         aria-hidden="true"

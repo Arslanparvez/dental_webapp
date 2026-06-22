@@ -15,10 +15,10 @@ export function Footer() {
   const year = new Date().getFullYear()
 
   return (
-    <footer className="relative overflow-hidden bg-ink text-white">
+    <footer className="relative overflow-hidden bg-metallic-red-panel text-white">
       <div
         aria-hidden="true"
-        className="absolute inset-x-0 -top-32 h-64 bg-[radial-gradient(50%_120%_at_50%_0%,rgba(0,166,166,0.18),transparent)]"
+        className="absolute inset-x-0 -top-32 h-64 bg-[radial-gradient(50%_120%_at_50%_0%,rgba(255,255,255,0.10),transparent)]"
       />
       <Container className="relative py-16 md:py-20">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1.3fr]">

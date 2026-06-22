@@ -19,8 +19,8 @@ export function MaterialFilters({ query, onQueryChange, category, onCategoryChan
               className={cn(
                 'rounded-full px-4 py-2 text-sm font-semibold tracking-tight transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal focus-visible:ring-offset-2',
                 active
-                  ? 'bg-ink text-white shadow-soft'
-                  : 'border border-zinc-200 bg-white text-zinc-600 hover:border-zinc-300 hover:text-ink'
+                  ? 'bg-metallic-red text-white shadow-soft'
+                  : 'border border-zinc-200 bg-white text-zinc-600 hover:border-red/40 hover:text-red'
               )}
             >
               {chip.name}

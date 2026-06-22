@@ -81,7 +81,7 @@ export function SideNav({ isOpen, onClose }) {
           >
             <div className="flex items-center justify-between border-b border-zinc-200 px-6 py-4">
               <Link to="/" onClick={onClose} className="flex items-center gap-2 font-heading text-lg font-bold tracking-tightest text-ink">
-                <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-ink text-white">
+                <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-red text-white">
                   <span className="text-sm font-black">D</span>
                 </span>
                 Digiart

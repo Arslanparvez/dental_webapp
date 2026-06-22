@@ -10,7 +10,7 @@ export function FeatureCard({ icon, title, text, className }) {
         className
       )}
     >
-      <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-ink text-white transition-colors duration-300 group-hover:bg-teal">
+      <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-red text-white transition-colors duration-300 group-hover:bg-teal">
         <Icon name={icon} size={22} />
       </span>
       <h3 className="mt-5 font-heading text-lg font-semibold tracking-tight text-ink">{title}</h3>

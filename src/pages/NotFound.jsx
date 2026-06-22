@@ -6,11 +6,11 @@ export default function NotFound() {
   return (
     <>
       <Seo title="Page Not Found" />
-      <section className="relative flex min-h-[80vh] items-center overflow-hidden bg-ink text-white">
+      <section className="relative flex min-h-[80vh] items-center overflow-hidden bg-metallic-red-panel text-white">
         <div aria-hidden="true" className="absolute inset-0 bg-grid-faint bg-[size:44px_44px] opacity-[0.12]" />
         <div
           aria-hidden="true"
-          className="absolute left-1/2 top-1/4 h-72 w-[640px] -translate-x-1/2 rounded-full bg-[radial-gradient(closest-side,rgba(0,166,166,0.25),transparent)] blur-2xl"
+          className="absolute left-1/2 top-1/4 h-72 w-[640px] -translate-x-1/2 rounded-full bg-[radial-gradient(closest-side,rgba(255,255,255,0.10),transparent)] blur-2xl"
         />
         <Container className="relative text-center">
           <p className="font-heading text-7xl font-black tracking-tightest text-white/90 md:text-8xl">404</p>

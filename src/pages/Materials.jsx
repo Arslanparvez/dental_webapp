@@ -44,14 +44,14 @@ export default function Materials() {
     <>
       <Seo
         title="Materials & Milling Tools"
-        description="Digiart Trading materials — Classic, Preshade, and Multilayer zirconia discs, plus carbide milling burs for every major CAD/CAM milling system."
+        description="Digiart Trading materials — zirconia (White, Preshade, Multilayer), PMMA, flexible resin, and lithium-disilicate blocks, plus carbide milling burs for every major CAD/CAM system."
         path="/materials"
       />
 
       <PageHeader
         eyebrow="Materials"
-        title="Premium zirconia and milling tools."
-        subtitle="Classic, preshade, and multilayer zirconia discs — plus carbide milling burs matched to every major CAD/CAM milling system."
+        title="Premium dental materials and milling tools."
+        subtitle="Zirconia, PMMA, flexible resin, and lithium-disilicate blocks — plus carbide milling burs matched to every major CAD/CAM milling system."
         breadcrumb={[{ label: 'Home', to: '/' }, { label: 'Materials' }]}
       />
 

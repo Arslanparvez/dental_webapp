@@ -10,7 +10,7 @@ export function ProcessFlow({ steps = [], className }) {
         <Reveal as="li" key={step.step} delay={i * 0.08} className="relative">
           <div className="flex h-full flex-col rounded-2xl border border-zinc-200 bg-white p-6 shadow-soft">
             <div className="flex items-center gap-3">
-              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-ink font-heading text-sm font-bold text-white">
+              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-red font-heading text-sm font-bold text-white">
                 {step.step}
               </span>
               <h4 className="font-heading text-base font-semibold tracking-tight text-ink">{step.title}</h4>

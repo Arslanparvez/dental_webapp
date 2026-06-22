@@ -5,11 +5,11 @@ import { FadeIn } from '../ui/FadeIn'
 // Dark "ink" page header band with a radial teal glow and faint grid.
 export function PageHeader({ title, subtitle, breadcrumb, eyebrow }) {
   return (
-    <header className="relative overflow-hidden bg-ink pb-20 pt-36 text-white">
+    <header className="relative overflow-hidden bg-metallic-red-panel pb-20 pt-36 text-white">
       <div aria-hidden="true" className="absolute inset-0 bg-grid-faint bg-[size:44px_44px] opacity-[0.15]" />
       <div
         aria-hidden="true"
-        className="absolute inset-x-0 -top-24 h-64 bg-[radial-gradient(60%_140%_at_50%_0%,rgba(0,166,166,0.35),transparent)]"
+        className="absolute inset-x-0 -top-24 h-64 bg-[radial-gradient(60%_140%_at_50%_0%,rgba(255,255,255,0.12),transparent)]"
       />
       <Container className="relative">
         <FadeIn>

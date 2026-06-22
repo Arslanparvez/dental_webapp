@@ -5,15 +5,16 @@ const base =
   'group inline-flex items-center justify-center gap-2 rounded-xl font-heading font-semibold tracking-tight transition-all duration-200 will-change-transform focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal focus-visible:ring-offset-2 focus-visible:ring-offset-white disabled:pointer-events-none disabled:opacity-50 active:translate-y-0'
 
 const variants = {
-  // Solid ink — the primary SaaS action
-  primary: 'bg-ink text-white shadow-soft hover:-translate-y-0.5 hover:shadow-lift',
-  // Brand accent
-  accent: 'bg-teal text-white shadow-soft hover:-translate-y-0.5 hover:bg-teal-600 hover:shadow-glow',
-  // Outline on light
-  outline: 'border border-zinc-300 bg-white text-ink hover:-translate-y-0.5 hover:border-ink hover:shadow-soft',
-  // Outline on dark bands
-  'outline-light': 'border border-white/25 text-white hover:bg-white/10 hover:border-white/50',
-  ghost: 'text-ink hover:bg-zinc-100',
+  // Brushed metallic red — the primary brand action
+  primary: 'bg-metallic-red text-white shadow-soft hover:-translate-y-0.5 hover:bg-metallic-red-hover hover:shadow-glow',
+  // Brand accent (solid red)
+  accent: 'bg-red text-white shadow-soft hover:-translate-y-0.5 hover:bg-red-600 hover:shadow-glow',
+  // Outline on light — red border + red text, fills metallic red on hover
+  outline: 'border border-red/40 bg-white text-red hover:-translate-y-0.5 hover:border-transparent hover:bg-metallic-red hover:text-white hover:shadow-glow',
+  // Outline on dark bands (white border + white text)
+  'outline-light': 'border border-white/30 text-white hover:bg-white/10 hover:border-white/60',
+  // Ghost — red text
+  ghost: 'text-red hover:bg-red/10',
 }
 
 const sizes = {

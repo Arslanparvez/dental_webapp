@@ -9,7 +9,7 @@ export function CtaBand() {
       <div aria-hidden="true" className="absolute inset-0 bg-grid-faint bg-[size:44px_44px] opacity-[0.12]" />
       <div
         aria-hidden="true"
-        className="absolute left-1/2 top-0 h-72 w-[640px] -translate-x-1/2 rounded-full bg-[radial-gradient(closest-side,rgba(0,166,166,0.28),transparent)] blur-2xl"
+        className="absolute left-1/2 top-0 h-72 w-[640px] -translate-x-1/2 rounded-full bg-[radial-gradient(closest-side,rgba(255,255,255,0.10),transparent)] blur-2xl"
       />
       <Container className="relative">
         <FadeIn className="mx-auto flex max-w-2xl flex-col items-center text-center">

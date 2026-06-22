@@ -24,7 +24,7 @@ function TestimonialCard({ item }) {
         “{item.quote}”
       </blockquote>
       <figcaption className="mt-6 flex items-center gap-3 border-t border-zinc-100 pt-5">
-        <span className="flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br from-ink to-teal font-heading text-sm font-bold text-white">
+        <span className="flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br from-red-600 to-teal font-heading text-sm font-bold text-white">
           {initials(item.name)}
         </span>
         <div>

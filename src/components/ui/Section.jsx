@@ -3,10 +3,10 @@ import { cn } from '../../lib/cn'
 const tones = {
   white: 'bg-white text-ink',
   paper: 'bg-zinc-50 text-ink',
-  ink: 'bg-ink text-white',
+  ink: 'bg-metallic-red-panel text-white',
   // legacy aliases
   light: 'bg-zinc-50 text-ink',
-  navy: 'bg-ink text-white',
+  navy: 'bg-metallic-red-panel text-white',
 }
 
 export function Section({ id, tone = 'white', className, children, ...rest }) {

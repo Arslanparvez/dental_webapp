@@ -20,7 +20,7 @@ function MenuIcon(props) {
 function Wordmark() {
   return (
     <Link to="/" className="flex items-center gap-2 font-heading text-lg font-bold tracking-tightest text-ink">
-      <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-ink text-white">
+      <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-red text-white">
         <span className="text-sm font-black">D</span>
       </span>
       Digiart
