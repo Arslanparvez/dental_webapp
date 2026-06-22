@@ -1,183 +1,121 @@
-// Catalog of Digiart's zirconia materials, grouped into three families:
-// White, Preshade, and Multilayer. Each entry is a distinct disc grade.
-import { zirconiaImages } from './siteImages'
-
-const imageForSlug = {
-  'ht-plus': zirconiaImages.copings,
-  'st-plus': zirconiaImages.archLower,
-  sht: zirconiaImages.molars,
-  ut: zirconiaImages.anterior1,
-  'htp-color': zirconiaImages.bridgeGingiva,
-  'stp-color': zirconiaImages.anterior2,
-  'sht-color': zirconiaImages.anteriorCloseup,
-  'st-multilayer': zirconiaImages.molars,
-  'ut-multilayer': zirconiaImages.anterior1,
-  'sht-multilayer': zirconiaImages.bridgeGingiva,
-  '3d-plus-multilayer': zirconiaImages.posteriorModel,
-  '4d-plus-multilayer': zirconiaImages.fullArchImplant,
-  '4d-pro-multilayer': zirconiaImages.anteriorCloseup,
-}
+// Digiart Trading's zirconia disc catalog, grouped into three families:
+// White (Classic), Preshade, and Multilayer. Specs are taken directly from
+// the official Digiart disc labels; descriptions from the Digiart price list.
+// Disc imagery is the real Digiart product-label artwork served from /public.
+const Z = '/images/zirconia'
 
 const base = [
-  // ---------------- White ----------------
+  // ---------------- White / Classic ----------------
   {
-    slug: 'ht-plus',
-    name: 'HT Plus Zirconia',
+    slug: 'classic-ht',
+    name: 'Classic HT',
     category: 'white-zirconia',
-    shortDescription: 'High-translucent, high-strength zirconia for copings and frameworks.',
+    image: `${Z}/disc-classic-ht.png`,
+    shortDescription: 'High-translucent white zirconia for full-contour crowns and long bridges.',
     description:
-      'A high-translucent Plus zirconia engineered for copings and frameworks where strength is paramount. Enhanced flexural strength and a fine, homogeneous grain structure deliver dependable substructures with smooth milling and stable green-body edges.',
-    specs: { Family: 'White', Aesthetic: 'High-translucent Plus', 'Bending Strength': '≥1200 MPa', 'Light Transmittance': '38%', 'Sintering Temp': '1530 °C', Shades: 'White (uncolored)' },
-    features: ['Enhanced strength with good translucency', 'Stable edges during milling', 'Fine homogeneous grain structure', 'Ideal for copings and frameworks'],
-    benefits: ['High-strength substructures', 'Reliable long-span frameworks', 'Smooth, chip-resistant milling'],
+      'A high-translucent white zirconia with 1350 MPa flexural strength and 40% translucency. Engineered for full-contour restorations and long-span bridges where strength is the priority, then characterised with shade liquids for natural results.',
+    specs: { Family: 'White (Classic)', Aesthetic: 'High-translucent (HT)', 'Bending Strength': '1350 MPa', 'Light Transmittance': '40%', Shade: 'White (uncolored)' },
+    features: [
+      'High strength — 1350 MPa',
+      'Suitable for full-contour crowns',
+      'Ideal for long-span bridges',
+      'Color with 16-shade dipping liquids',
+    ],
+    benefits: ['Dependable long-span frameworks', 'Strong monolithic restorations', 'Flexible shading workflow'],
     featured: true,
   },
   {
-    slug: 'st-plus',
-    name: 'ST Plus Zirconia',
+    slug: 'classic-st',
+    name: 'Classic ST',
     category: 'white-zirconia',
-    shortDescription: 'Super-translucent zirconia for full-contour crowns and bridges.',
+    image: `${Z}/disc-classic-st.png`,
+    shortDescription: 'Super-translucent white zirconia for full-contour crowns and bridges.',
     description:
-      'A super-translucent Plus zirconia balancing strength and esthetics for full-contour crowns and bridges up to long-span cases. Pairs with a 16-shade coloring liquid for natural, predictable results.',
-    specs: { Family: 'White', Aesthetic: 'Super-translucent Plus', 'Bending Strength': '≥1100 MPa', 'Light Transmittance': '43%', 'Sintering Temp': '1530 °C', Shades: 'White (uncolored)' },
-    features: ['Balanced strength and translucency', 'Suitable for full-contour crowns & bridges', 'Pairs with 16-shade coloring liquid', 'Up to 14-unit bridges'],
-    benefits: ['Esthetic monolithic restorations', 'Versatile across indications', 'Predictable shading'],
-    featured: true,
-  },
-  {
-    slug: 'sht',
-    name: 'SHT Zirconia',
-    category: 'white-zirconia',
-    shortDescription: 'Super-high-translucent zirconia for esthetic full-contour restorations.',
-    description:
-      'A super-high-translucent zirconia widely used for full-contour crowns and bridges, offering an excellent blend of translucency and reliable strength with a lower sintering temperature.',
-    specs: { Family: 'White', Aesthetic: 'Super-high-translucent', 'Bending Strength': '≥1000 MPa', 'Light Transmittance': '45%', 'Sintering Temp': '1450 °C', Shades: 'White (uncolored)' },
-    features: ['High translucency', 'Suitable for full-contour crowns & bridges', 'Pairs with 16-shade coloring liquid', 'Up to 14-unit bridges'],
-    benefits: ['Lifelike esthetics', 'Reliable everyday performance', 'Efficient sintering'],
-    featured: false,
-  },
-  {
-    slug: 'ut',
-    name: 'UT Zirconia',
-    category: 'white-zirconia',
-    shortDescription: 'Ultra-translucent zirconia for highly esthetic anterior restorations.',
-    description:
-      'An ultra-translucent zirconia with superior glossy translucency, ideal for anterior crowns and veneers where esthetics are the priority.',
-    specs: { Family: 'White', Aesthetic: 'Ultra-translucent', 'Bending Strength': '≥1000 MPa', 'Light Transmittance': '49%', 'Sintering Temp': '1450 °C', Shades: 'White (uncolored)' },
-    features: ['Superior glossy translucency', 'Ideal for anterior restorations', 'Suitable for veneers', 'Pairs with coloring liquid'],
-    benefits: ['Outstanding anterior esthetics', 'Natural light behavior', 'Thin, lifelike veneers'],
+      'A super-translucent white zirconia with 1200 MPa flexural strength and 43% translucency. Balances esthetics and strength for full-contour crowns and bridges, finished with shade liquids for lifelike results.',
+    specs: { Family: 'White (Classic)', Aesthetic: 'Super-translucent (ST)', 'Bending Strength': '1200 MPa', 'Light Transmittance': '43%', Shade: 'White (uncolored)' },
+    features: [
+      'Balanced strength and translucency',
+      'Suitable for full-contour crowns',
+      'Ideal for crowns and bridges',
+      'Color with 16-shade dipping liquids',
+    ],
+    benefits: ['Esthetic monolithic restorations', 'Versatile across indications', 'Lifelike translucency'],
     featured: true,
   },
 
   // ---------------- Preshade ----------------
   {
-    slug: 'htp-color',
-    name: 'HTP Color Zirconia',
+    slug: 'preshade-ht',
+    name: 'Preshade HT',
     category: 'preshade-zirconia',
-    shortDescription: 'Preshaded high-translucent zirconia for copings and frameworks — no coloring step.',
+    image: `${Z}/disc-preshade-ht.png`,
+    shortDescription: 'Preshaded high-translucent zirconia — colored for accuracy, no dipping step.',
     description:
-      'A preshaded high-translucent zirconia that removes the coloring step from the workflow. Consistent shade through the disc saves time while delivering dependable framework strength.',
-    specs: { Family: 'Preshade', Aesthetic: 'High-translucent', 'Bending Strength': '≥1100 MPa', 'Light Transmittance': '38%', 'Sintering Temp': '1530 °C', Shades: 'VITA 16 + BL1–BL3' },
-    features: ['Preshaded — no dipping or coloring', 'Time-saving, economical workflow', 'Consistent shade through the disc', 'Copings and frameworks'],
-    benefits: ['Faster turnaround', 'Predictable shade', 'Lower processing cost'],
+      'A preshaded high-translucent zirconia with 1350 MPa flexural strength and 40% translucency. The disc is colored after sintering, making the shade of the blocks more accurate and easier for technicians to handle. Suitable for full-contour crowns and bridges.',
+    specs: { Family: 'Preshade', Aesthetic: 'High-translucent (HT)', 'Bending Strength': '1350 MPa', 'Light Transmittance': '40%', Shade: 'VITA 16 + BL1–BL3' },
+    features: [
+      'Preshaded — no dipping or coloring',
+      'Accurate, consistent shade through the disc',
+      'High strength — 1350 MPa',
+      'Full-contour crowns and bridges',
+    ],
+    benefits: ['Faster, cleaner workflow', 'Predictable shade matching', 'Easy for technicians to operate'],
     featured: false,
   },
   {
-    slug: 'stp-color',
-    name: 'STP Color Zirconia',
+    slug: 'preshade-st',
+    name: 'Preshade ST',
     category: 'preshade-zirconia',
+    image: `${Z}/disc-preshade-st.png`,
     shortDescription: 'Preshaded super-translucent zirconia for full-contour crowns and bridges.',
     description:
-      'A preshaded super-translucent zirconia for full-contour crowns and bridges. Colored consistently through the disc for accurate, easy-to-handle results.',
-    specs: { Family: 'Preshade', Aesthetic: 'Super-translucent', 'Bending Strength': '≥1000 MPa', 'Light Transmittance': '43%', 'Sintering Temp': '1530 °C', Shades: 'VITA 16 + BL1–BL3' },
-    features: ['Preshaded for accurate color', 'Full-contour crowns & bridges', 'Easy to handle', 'Consistent shade'],
-    benefits: ['Accurate shade matching', 'Streamlined workflow', 'Reliable esthetics'],
+      'A preshaded super-translucent zirconia with 1100 MPa flexural strength and 43% translucency. Colored consistently through the disc, so there is no need for coloring. Suitable for full-contour crowns and bridges.',
+    specs: { Family: 'Preshade', Aesthetic: 'Super-translucent (ST)', 'Bending Strength': '1100 MPa', 'Light Transmittance': '43%', Shade: 'VITA 16 + BL1–BL3' },
+    features: [
+      'Preshaded — no coloring required',
+      'Consistent shade through the disc',
+      'Super-translucent esthetics',
+      'Full-contour crowns and bridges',
+    ],
+    benefits: ['Time-saving workflow', 'Accurate, repeatable shade', 'Reliable esthetics'],
     featured: true,
-  },
-  {
-    slug: 'sht-color',
-    name: 'SHT Color Zirconia',
-    category: 'preshade-zirconia',
-    shortDescription: 'Preshaded super-high-translucent zirconia for esthetic full-contour work.',
-    description:
-      'A preshaded super-high-translucent zirconia combining lifelike translucency with an accurate, consistent shade for full-contour crowns and bridges.',
-    specs: { Family: 'Preshade', Aesthetic: 'Super-high-translucent', 'Bending Strength': '≥1000 MPa', 'Light Transmittance': '45%', 'Sintering Temp': '1450 °C', Shades: 'VITA 16 + BL1–BL3' },
-    features: ['Preshaded high translucency', 'Full-contour crowns & bridges', 'Consistent, accurate shade', 'Efficient sintering'],
-    benefits: ['Lifelike esthetics', 'Faster turnaround', 'Predictable color'],
-    featured: false,
   },
 
   // ---------------- Multilayer ----------------
   {
-    slug: 'st-multilayer',
-    name: 'ST Multilayer Zirconia',
+    slug: 'essential-ml',
+    name: 'Essential ML',
     category: 'multilayer-zirconia',
-    shortDescription: 'Super-translucent multilayer zirconia with a natural color gradient.',
+    image: `${Z}/disc-essential-ml.png`,
+    shortDescription: 'Multilayer zirconia with a natural color gradient for everyday esthetics.',
     description:
-      'A super-translucent multilayer zirconia with a built-in color gradient that removes the dyeing step. High strength makes it well suited to posterior full-contour restorations.',
-    specs: { Family: 'Multilayer', Aesthetic: 'Super-translucent', 'Bending Strength': '≥1100 MPa', 'Light Transmittance': '43%', 'Sintering Temp': '1530 °C', Shades: 'VITA 16 + BL1–BL4' },
-    features: ['Natural color gradient — no dyeing', 'High strength for posterior loads', 'Seamless cervical-to-incisal transition', 'Screw-retained bridges'],
-    benefits: ['Esthetic results with less effort', 'Durable posterior restorations', 'Consistent gradient'],
+      'A multilayer zirconia with 1000 MPa flexural strength and 46% translucency. A natural color gradient is built through the disc — from cervical to incisal — removing the dyeing step while delivering reliable strength for full-contour crowns and bridges across the arch.',
+    specs: { Family: 'Multilayer', Aesthetic: 'Multilayer gradient (ML)', 'Bending Strength': '1000 MPa', 'Light Transmittance': '46%', Shade: 'VITA 16 shades' },
+    features: [
+      'Built-in natural color gradient',
+      'No dyeing step required',
+      'Reliable strength — 1000 MPa',
+      'Anterior and posterior full-contour work',
+    ],
+    benefits: ['Esthetic results with less effort', 'Seamless cervical-to-incisal transition', 'Streamlined workflow'],
     featured: true,
   },
   {
-    slug: 'ut-multilayer',
-    name: 'UT Multilayer Zirconia',
+    slug: 'prestige-ml',
+    name: 'Prestige ML',
     category: 'multilayer-zirconia',
-    shortDescription: 'Ultra-translucent multilayer zirconia for esthetic anterior restorations.',
+    image: `${Z}/disc-prestige-ml.png`,
+    shortDescription: 'Premium multilayer zirconia with combined translucency and strength gradients.',
     description:
-      'An ultra-translucent multilayer zirconia with a natural gradient and superior glossy translucency, ideal for anterior crowns, veneers, and esthetic full-contour bridges.',
-    specs: { Family: 'Multilayer', Aesthetic: 'Ultra-translucent', 'Bending Strength': '≥1000 MPa', 'Light Transmittance': '49%', 'Sintering Temp': '1500 °C', Shades: 'VITA 16 + BL1–BL4' },
-    features: ['Natural color gradient', 'Superior glossy translucency', 'Ideal for anterior work', 'Suitable for veneers'],
-    benefits: ['Outstanding anterior esthetics', 'No dyeing step', 'Natural light behavior'],
-    featured: false,
-  },
-  {
-    slug: 'sht-multilayer',
-    name: 'SHT Multilayer Zirconia',
-    category: 'multilayer-zirconia',
-    shortDescription: 'Super-high-translucent multilayer zirconia for anterior and posterior work.',
-    description:
-      'A super-high-translucent multilayer zirconia with a natural gradient and high strength, versatile across anterior and posterior full-contour restorations.',
-    specs: { Family: 'Multilayer', Aesthetic: 'Super-high-translucent', 'Bending Strength': '≥1000 MPa', 'Light Transmittance': '45%', 'Sintering Temp': '1500 °C', Shades: 'VITA 16 + BL1–BL4' },
-    features: ['Natural color gradient', 'High strength', 'Anterior and posterior restorations', 'No dyeing step'],
-    benefits: ['Versatile esthetics', 'Reliable strength', 'Streamlined workflow'],
-    featured: false,
-  },
-  {
-    slug: '3d-plus-multilayer',
-    name: '3D Plus Multilayer Zirconia',
-    category: 'multilayer-zirconia',
-    shortDescription: 'Multilayer zirconia with color and strength gradients for any indication.',
-    description:
-      'A multilayer zirconia with a multi-layer color gradient and a strength gradient across the disc, balancing translucency and strength for both anterior and posterior restorations.',
-    specs: { Family: 'Multilayer', Aesthetic: 'Multilayer gradient', 'Bending Strength': '700–1200 MPa', 'Light Transmittance': '45–57%', 'Sintering Temp': '1500 °C', Shades: 'VITA 16 + BL1–BL4' },
-    features: ['Multi-layer color gradient', 'Strength gradient across layers', 'Strong translucency balance', 'Anterior and posterior restorations'],
-    benefits: ['One disc, many indications', 'Esthetics with strength', 'Natural transitions'],
-    featured: false,
-  },
-  {
-    slug: '4d-plus-multilayer',
-    name: '4D Plus Multilayer Zirconia',
-    category: 'multilayer-zirconia',
-    shortDescription: 'Four-dimensional gradient zirconia — color, strength, translucency, and fracture.',
-    description:
-      'A four-dimensional gradient zirconia transitioning in color, strength, translucency, and fracture behavior across the disc, with high fracture toughness for chip-resistant anterior and posterior restorations.',
-    specs: { Family: 'Multilayer', Aesthetic: '4D gradient', 'Bending Strength': '700–1200 MPa', 'Light Transmittance': '45–57%', 'Sintering Temp': '1500 °C', Shades: 'VITA 16 + BL1–BL4' },
-    features: ['4D gradient: color, strength, translucency & fracture', 'High fracture toughness', 'Chip-resistant', 'Anterior and posterior restorations'],
-    benefits: ['Premium natural esthetics', 'Durable, chip-resistant results', 'Versatile across the arch'],
-    featured: true,
-  },
-  {
-    slug: '4d-pro-multilayer',
-    name: '4D Pro Multilayer Zirconia (7-Layer)',
-    category: 'multilayer-zirconia',
-    shortDescription: 'Seven-layer gradient zirconia — our most esthetic, all-in-one block.',
-    description:
-      'Our most advanced multilayer zirconia, with a seven-layer natural gradient in color, translucency, and fracture toughness. Strength reaches up to 1200 MPa with up to 57% translucency for premium anterior and posterior restorations.',
-    specs: { Family: 'Multilayer', Aesthetic: 'All-in-one 7-layer gradient', 'Bending Strength': '700–1200 MPa', 'Light Transmittance': '43–57%', 'Sintering Temp': '1500 °C', Shades: 'VITA 16 + BL1–BL4' },
-    features: ['Seven-layer natural gradient', 'Color, translucency & fracture-toughness gradient', 'Up to 1200 MPa and up to 57% translucency', 'Anterior and posterior restorations'],
-    benefits: ['Top-tier natural esthetics', 'Strength and beauty in one disc', 'Lifelike multi-zone transitions'],
+      'Our premium multilayer zirconia, with a translucency gradient from 57% down to 43% and a strength gradient from 750 up to 1200 MPa across the disc. The high-translucency incisal zone delivers top-tier anterior esthetics while the high-strength cervical zone supports posterior loads — an all-in-one disc for restorations across the whole arch.',
+    specs: { Family: 'Multilayer', Aesthetic: 'Premium gradient (ML)', 'Bending Strength': '750–1200 MPa', 'Light Transmittance': '43–57%', Shade: 'VITA 16 shades' },
+    features: [
+      'Translucency gradient: 57% → 43%',
+      'Strength gradient: 750 → 1200 MPa',
+      'All-in-one anterior-to-posterior disc',
+      'Premium natural esthetics',
+    ],
+    benefits: ['Top-tier anterior translucency', 'High-strength posterior support', 'One disc for the whole arch'],
     featured: true,
   },
 ]
@@ -186,8 +124,7 @@ function buildProducts() {
   const expanded = base.map((b, i) => ({
     ...b,
     id: i + 1,
-    image: imageForSlug[b.slug] || zirconiaImages.molars,
-    images: [imageForSlug[b.slug] || zirconiaImages.molars],
+    images: [b.image],
   }))
 
   // relatedIds: other discs in the same family.

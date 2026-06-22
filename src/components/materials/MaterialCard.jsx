@@ -15,7 +15,7 @@ export function MaterialCard({ product, onSelect }) {
       onClick={() => onSelect(product)}
       className="group flex h-full flex-col overflow-hidden rounded-2xl border border-zinc-200 bg-white text-left shadow-soft transition-all duration-300 hover:-translate-y-1 hover:border-zinc-300 hover:shadow-lift focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal focus-visible:ring-offset-2"
     >
-      <div className="relative aspect-[4/3] overflow-hidden bg-zinc-100">
+      <div className="relative aspect-[4/3] overflow-hidden bg-white">
         {!loaded && <Skeleton className="absolute inset-0" rounded="rounded-none" />}
         <img
           src={product.image}
@@ -25,7 +25,7 @@ export function MaterialCard({ product, onSelect }) {
           height={600}
           onLoad={() => setLoaded(true)}
           className={cn(
-            'h-full w-full object-cover transition-all duration-500 group-hover:scale-105',
+            'h-full w-full object-contain p-5 transition-all duration-500 group-hover:scale-105',
             loaded ? 'opacity-100' : 'opacity-0'
           )}
         />

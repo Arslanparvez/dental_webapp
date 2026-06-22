@@ -15,7 +15,14 @@ test('product slugs are unique', () => {
   expect(new Set(s).size).toBe(s.length)
 })
 test('the zirconia catalog lists every disc family', () => {
-  expect(products.length).toBeGreaterThanOrEqual(12)
+  expect(products.length).toBe(6)
   const families = new Set(products.map((p) => p.category))
   expect(families).toEqual(new Set(['white-zirconia', 'preshade-zirconia', 'multilayer-zirconia']))
+})
+test('every product has an image and the required card specs', () => {
+  for (const p of products) {
+    expect(p.image).toMatch(/^\/images\/zirconia\//)
+    expect(p.specs.Aesthetic).toBeTruthy()
+    expect(p.specs['Bending Strength']).toBeTruthy()
+  }
 })

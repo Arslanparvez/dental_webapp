@@ -7,6 +7,7 @@ import { PageHeader } from '../components/sections/PageHeader'
 import { MaterialFilters } from '../components/materials/MaterialFilters'
 import { MaterialGrid } from '../components/materials/MaterialGrid'
 import { MaterialDrawer } from '../components/materials/MaterialDrawer'
+import { MillingTools } from '../components/materials/MillingTools'
 import { products } from '../data/products'
 import { useProductSearch } from '../hooks/useProductSearch'
 
@@ -42,15 +43,15 @@ export default function Materials() {
   return (
     <>
       <Seo
-        title="Zirconia Materials"
-        description="Digiart Design Services' zirconia materials — white, preshade, and multilayer discs, from high-strength framework grades to 7-layer multilayer-gradient esthetic blocks."
+        title="Materials & Milling Tools"
+        description="Digiart Trading materials — Classic, Preshade, and Multilayer zirconia discs, plus carbide milling burs for every major CAD/CAM milling system."
         path="/materials"
       />
 
       <PageHeader
         eyebrow="Materials"
-        title="Premium zirconia, engineered for every indication."
-        subtitle="White, preshade, and multilayer discs — high-strength framework grades through ultra-translucent and multilayer-gradient esthetic blocks."
+        title="Premium zirconia and milling tools."
+        subtitle="Classic, preshade, and multilayer zirconia discs — plus carbide milling burs matched to every major CAD/CAM milling system."
         breadcrumb={[{ label: 'Home', to: '/' }, { label: 'Materials' }]}
       />
 
@@ -70,6 +71,12 @@ export default function Materials() {
           <div className="mt-6">
             <MaterialGrid products={filtered} loading={loading} onSelect={setActive} />
           </div>
+        </Container>
+      </Section>
+
+      <Section tone="paper">
+        <Container>
+          <MillingTools />
         </Container>
       </Section>
 

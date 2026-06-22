@@ -11,13 +11,13 @@ export function MaterialDrawer({ product, open, onClose }) {
     <Drawer open={open} onClose={onClose} title="Material details">
       {product && (
         <div>
-          <div className="overflow-hidden rounded-2xl border border-zinc-200">
+          <div className="overflow-hidden rounded-2xl border border-zinc-200 bg-white">
             <img
               src={product.image}
               alt={product.name}
               width={800}
               height={600}
-              className="aspect-[4/3] w-full object-cover"
+              className="aspect-[4/3] w-full object-contain p-6"
             />
           </div>
 
