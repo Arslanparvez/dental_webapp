@@ -19,11 +19,9 @@ function MenuIcon(props) {
 
 function Wordmark() {
   return (
-    <Link to="/" className="flex items-center gap-2 font-heading text-lg font-bold tracking-tightest text-ink">
-      <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-red text-white">
-        <span className="text-sm font-black">D</span>
-      </span>
-      Digiart
+    <Link to="/" className="flex items-center gap-2.5" aria-label="Digiart Design Services — home">
+      <img src="/images/logo-icon.png" alt="Digiart Design Services" width={70} height={98} className="h-9 w-auto" />
+      <span className="font-heading text-lg font-bold tracking-tightest text-ink">Digiart</span>
     </Link>
   )
 }
@@ -40,8 +38,8 @@ export function TopBar() {
         className={cn(
           'fixed inset-x-0 top-0 z-30 transition-all duration-300',
           scrolled
-            ? 'border-b border-zinc-200/80 bg-white/80 backdrop-blur-xl'
-            : 'border-b border-transparent bg-transparent'
+            ? 'border-b border-zinc-200 bg-white/90 shadow-soft backdrop-blur-xl'
+            : 'border-b border-zinc-200 bg-white'
         )}
       >
         <Container className="flex h-16 items-center justify-between gap-4">

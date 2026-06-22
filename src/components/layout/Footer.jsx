@@ -23,9 +23,9 @@ export function Footer() {
       <Container className="relative py-16 md:py-20">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1.3fr]">
           <div>
-            <Link to="/" className="flex items-center gap-2 font-heading text-xl font-bold tracking-tightest text-white">
-              <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-white text-ink">
-                <span className="text-base font-black">D</span>
+            <Link to="/" className="flex items-center gap-3 font-heading text-xl font-bold tracking-tightest text-white">
+              <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-white p-1.5">
+                <img src="/images/logo-icon.png" alt="Digiart Design Services" className="h-full w-auto" />
               </span>
               Digiart Design Services
             </Link>
