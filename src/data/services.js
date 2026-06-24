@@ -9,23 +9,48 @@ export const serviceCategories = [
   {
     slug: 'fixed',
     name: 'Fixed Prosthesis',
+    icon: 'crown',
+    image: '/images/services/crown-bridge.png',
     description:
-      'Crown, bridge, implant, and veneer restorations used to replace missing teeth and restore the appearance and function of the mouth.',
+      'Fixed prostheses are used to replace missing teeth, restore the appearance and function of the mouth, and improve oral health. They are called “fixed” because they are not removable by the patient — they remain in the mouth at all times.',
   },
   {
     slug: 'removable',
     name: 'Removable',
-    description: 'Dental appliances used to replace missing teeth that can easily be taken in and out.',
+    icon: 'tooth',
+    image: '/images/services/denture.png',
+    description:
+      'Removable dentures are dental appliances used to replace missing teeth. They can be easily taken out of the mouth for cleaning and maintenance.',
   },
   {
     slug: 'surgical',
     name: 'Surgical Guide',
-    description: 'Designs that bring precision to surgical and implant planning for predictable outcomes.',
+    icon: 'scan',
+    image: '/images/services/model.png',
+    description:
+      'Surgical guides are used in procedures where precision is critical to achieve successful outcomes — bringing accuracy to implant and restorative planning.',
   },
   {
     slug: 'appliance',
     name: 'Appliance',
-    description: 'Custom-made devices that address bite, grinding, and orthodontic needs.',
+    icon: 'shield',
+    image: '/images/services/bite-splint.png',
+    description:
+      'In dentistry, an appliance refers to any custom-made device used to address dental issues — including braces, retainers, mouthguards, and oral splints.',
+  },
+]
+
+// "Our offerings" — shown on the home page under each service (shared content).
+export const offerings = [
+  {
+    title: 'Standard crown design',
+    text: 'Our standard crown design includes abutment, bridge, copings, crowns, inlay, onlay, post & core, screw retained frame, temporary pontic, veneer.',
+    icon: 'crown',
+  },
+  {
+    title: 'All on X design',
+    text: 'Our All on X specialized design team is here to help you on your large implant-retained cases. Whether you are currently offering Hybrids to your clinicians or want to get started, we’ve got you covered!',
+    icon: 'implant',
   },
 ]
 
