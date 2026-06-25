@@ -5,7 +5,7 @@ import { FadeIn } from '../ui/FadeIn'
 export function StatsBand({ tone = 'light' }) {
   return (
     <FadeIn>
-      <dl className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
+      <dl className="mx-auto grid max-w-2xl grid-cols-2 gap-4 md:gap-8">
         {stats.map((stat) => (
           <StatCard
             key={stat.label}

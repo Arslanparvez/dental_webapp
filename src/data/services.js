@@ -10,7 +10,7 @@ export const serviceCategories = [
     slug: 'fixed',
     name: 'Fixed Prosthesis',
     icon: 'crown',
-    image: '/images/services/crown-bridge.png',
+    image: '/images/categories/fixed.png',
     description:
       'Fixed prostheses are used to replace missing teeth, restore the appearance and function of the mouth, and improve oral health. They are called “fixed” because they are not removable by the patient — they remain in the mouth at all times.',
   },
@@ -18,7 +18,7 @@ export const serviceCategories = [
     slug: 'removable',
     name: 'Removable',
     icon: 'tooth',
-    image: '/images/services/denture.png',
+    image: '/images/categories/removable.png',
     description:
       'Removable dentures are dental appliances used to replace missing teeth. They can be easily taken out of the mouth for cleaning and maintenance.',
   },
@@ -26,7 +26,7 @@ export const serviceCategories = [
     slug: 'surgical',
     name: 'Surgical Guide',
     icon: 'scan',
-    image: '/images/services/model.png',
+    image: '/images/categories/surgical.png',
     description:
       'Surgical guides are used in procedures where precision is critical to achieve successful outcomes — bringing accuracy to implant and restorative planning.',
   },
@@ -34,7 +34,7 @@ export const serviceCategories = [
     slug: 'appliance',
     name: 'Appliance',
     icon: 'shield',
-    image: '/images/services/bite-splint.png',
+    image: '/images/categories/appliance.png',
     description:
       'In dentistry, an appliance refers to any custom-made device used to address dental issues — including braces, retainers, mouthguards, and oral splints.',
   },

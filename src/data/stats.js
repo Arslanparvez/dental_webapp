@@ -1,6 +1,4 @@
 export const stats = [
-  { label: 'Clients Served', value: 500, suffix: '+' },
-  { label: 'Projects Completed', value: 12000, suffix: '+' },
-  { label: 'Products Available', value: 1000, suffix: '+' },
-  { label: 'Countries Served', value: 25, suffix: '+' },
+  { label: 'Years of Experience', value: 15, suffix: '+' },
+  { label: 'Cases Treated', value: 3, suffix: 'M+' },
 ]

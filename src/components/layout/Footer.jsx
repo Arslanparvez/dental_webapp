@@ -23,11 +23,8 @@ export function Footer() {
       <Container className="relative py-16 md:py-20">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1.3fr]">
           <div>
-            <Link to="/" className="flex items-center gap-3 font-heading text-xl font-bold tracking-tightest text-white">
-              <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-white p-1.5">
-                <img src="/images/logo-icon.png" alt="Digiart Design Services" className="h-full w-auto" />
-              </span>
-              Digiart Design Services
+            <Link to="/" className="inline-flex" aria-label="Digiart Center — home">
+              <img src="/images/logo-full-white.png" alt="Digiart Center" className="h-24 w-auto" />
             </Link>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/55">
               A Dubai-based digital dental CAD/CAM design studio — moving the world of dentistry in a digital way for

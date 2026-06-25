@@ -19,9 +19,8 @@ function MenuIcon(props) {
 
 function Wordmark() {
   return (
-    <Link to="/" className="flex items-center gap-2.5" aria-label="Digiart Design Services — home">
-      <img src="/images/logo-icon.png" alt="Digiart Design Services" width={70} height={98} className="h-9 w-auto" />
-      <span className="font-heading text-lg font-bold tracking-tightest text-ink">Digiart</span>
+    <Link to="/" className="flex items-center" aria-label="Digiart Center — home">
+      <img src="/images/logo-full.png" alt="Digiart Center" className="h-14 w-auto" />
     </Link>
   )
 }
@@ -74,6 +73,9 @@ export function TopBar() {
           <div className="flex items-center gap-2">
             <Button to="/contact" variant="primary" size="sm" className="hidden sm:inline-flex">
               Request a Quote
+            </Button>
+            <Button to="/contact" variant="outline" size="sm" className="hidden md:inline-flex">
+              Send Your Case
             </Button>
             <button
               type="button"

@@ -80,9 +80,8 @@ export function SideNav({ isOpen, onClose }) {
             transition={panelT}
           >
             <div className="flex items-center justify-between border-b border-zinc-200 px-6 py-4">
-              <Link to="/" onClick={onClose} className="flex items-center gap-2.5" aria-label="Digiart Design Services — home">
-                <img src="/images/logo-icon.png" alt="Digiart Design Services" width={70} height={98} className="h-9 w-auto" />
-                <span className="font-heading text-lg font-bold tracking-tightest text-ink">Digiart</span>
+              <Link to="/" onClick={onClose} className="flex items-center" aria-label="Digiart Center — home">
+                <img src="/images/logo-full.png" alt="Digiart Center" className="h-12 w-auto" />
               </Link>
               <button
                 ref={closeBtnRef}
@@ -120,6 +119,9 @@ export function SideNav({ isOpen, onClose }) {
             <div className="border-t border-zinc-200 px-6 py-6">
               <Button to="/contact" variant="primary" size="md" className="w-full" onClick={onClose}>
                 Request a Quote
+              </Button>
+              <Button to="/contact" variant="outline" size="md" className="mt-3 w-full" onClick={onClose}>
+                Send Your Case
               </Button>
               <div className="mt-5 space-y-1 text-sm text-zinc-500">
                 <a href={`tel:${hq.phone.replace(/\s+/g, '')}`} className="block transition hover:text-teal">
