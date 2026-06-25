@@ -6,6 +6,7 @@ import { NAV } from '../../data/nav'
 import { useDisclosure } from '../../hooks/useDisclosure'
 import { useScrollPosition } from '../../hooks/useScrollPosition'
 import { SideNav } from './SideNav'
+import { LanguageSwitcher } from './LanguageSwitcher'
 
 function MenuIcon(props) {
   return (
@@ -77,6 +78,7 @@ export function TopBar() {
             <Button to="/contact" variant="outline" size="sm" className="hidden md:inline-flex">
               Send Your Case
             </Button>
+            <LanguageSwitcher />
             <button
               type="button"
               onClick={open}

@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { TopBar } from './TopBar'
 import { Footer } from './Footer'
 import { WhatsAppButton } from './WhatsAppButton'
+import { TranslationLoader } from './TranslationLoader'
 import { ScrollToTop } from './ScrollToTop'
 import { ScrollRestoration } from '../ScrollRestoration'
 import { Loader } from '../ui/Loader'
@@ -42,6 +43,7 @@ export function Layout() {
       </main>
       <Footer />
       <WhatsAppButton />
+      <TranslationLoader />
       <ScrollToTop />
     </>
   )
