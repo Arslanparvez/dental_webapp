@@ -149,7 +149,7 @@ const base = [
     group: 'surgical',
     title: 'Model',
     icon: 'cube',
-    image: `${S}/model.png`,
+    image: '/images/categories/surgical.png',
     summary: 'Implant models using lab analogs.',
     description:
       'Model designs for implant cases using the lab analog, showing exact implant positioning for accurate, predictable restorative work.',

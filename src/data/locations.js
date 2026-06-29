@@ -7,7 +7,7 @@ export const locations = [
       'Falcon Apartment, Shop No. 3, Khalid bin Waleed Road, Bur Dubai, Dubai, United Arab Emirates',
     phone: '+971 58 682 5051',
     whatsapp: '971586825051',
-    email: 'info@digiartdesignservices.com',
+    email: 'info@digiartcenter.com',
     hours: 'Sun–Thu: 9:00 AM – 6:00 PM (GST)',
     lat: 25.2582,
     lng: 55.2962,

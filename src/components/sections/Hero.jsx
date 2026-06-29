@@ -1,9 +1,87 @@
-import { motion } from 'framer-motion'
+import { useEffect, useState } from 'react'
+import { AnimatePresence, motion } from 'framer-motion'
 import { Container } from '../ui/Container'
 import { Button } from '../ui/Button'
 import { useReducedMotion } from '../../hooks/useReducedMotion'
 
 const EASE = [0.22, 1, 0.36, 1]
+
+const INTERVAL = 3400
+
+// Premium auto-advancing product showcase shown on the side of the hero
+// (desktop only). Frosted-glass card, clean product stage, caption + progress.
+function ProductStepper({ items, side, reduced, delay }) {
+  const isLeft = side === 'left'
+  const [idx, setIdx] = useState(0)
+
+  useEffect(() => {
+    if (reduced || items.length < 2) return
+    const id = window.setInterval(() => setIdx((p) => (p + 1) % items.length), INTERVAL)
+    return () => window.clearInterval(id)
+  }, [items.length, reduced])
+
+  const item = items[idx]
+
+  return (
+    <motion.div
+      initial={reduced ? false : { opacity: 0, x: isLeft ? -28 : 28 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.7, ease: EASE, delay }}
+      className={`absolute top-1/2 z-20 hidden -translate-y-1/2 xl:block ${
+        isLeft ? 'left-6 2xl:left-16' : 'right-6 2xl:right-16'
+      }`}
+    >
+      <div className="w-56 overflow-hidden rounded-2xl border border-white/15 bg-white/10 shadow-[0_30px_70px_-20px_rgba(0,0,0,0.6)] ring-1 ring-white/10 backdrop-blur-md 2xl:w-64">
+        {/* Product stage */}
+        <div className="relative aspect-square overflow-hidden bg-gradient-to-br from-white to-zinc-100">
+          <AnimatePresence mode="wait">
+            <motion.img
+              key={idx}
+              src={item.src}
+              alt={item.name}
+              initial={reduced ? false : { opacity: 0, scale: 0.96 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={reduced ? {} : { opacity: 0, scale: 1.02 }}
+              transition={{ duration: 0.5, ease: EASE }}
+              className="absolute inset-0 h-full w-full object-contain p-7"
+            />
+          </AnimatePresence>
+        </div>
+        {/* Caption */}
+        <div className="flex items-center justify-between gap-2 px-4 py-3">
+          <span className="truncate font-heading text-sm font-semibold tracking-tight text-white">{item.name}</span>
+          <span className="shrink-0 text-[11px] font-semibold tabular-nums text-white/45">
+            {String(idx + 1).padStart(2, '0')}/{String(items.length).padStart(2, '0')}
+          </span>
+        </div>
+        {/* Auto-advance progress */}
+        <div className="h-1 w-full bg-white/10">
+          <motion.div
+            key={idx}
+            className="h-full bg-red"
+            style={{ transformOrigin: 'left' }}
+            initial={reduced ? false : { scaleX: 0 }}
+            animate={{ scaleX: 1 }}
+            transition={{ duration: reduced ? 0 : INTERVAL / 1000, ease: 'linear' }}
+          />
+        </div>
+      </div>
+    </motion.div>
+  )
+}
+
+const LEFT_ITEMS = [
+  { src: '/images/services/crown-bridge.png', name: 'Crown & Bridge' },
+  { src: '/images/services/emax-veneer.png', name: 'Emax Veneer' },
+  { src: '/images/services/denture.png', name: 'Denture' },
+  { src: '/images/services/partial-frame.png', name: 'Partial Frame' },
+]
+const RIGHT_ITEMS = [
+  { src: '/images/services/implant-screw-retain.png', name: 'Implant Screw-Retained' },
+  { src: '/images/services/model.png', name: 'Model' },
+  { src: '/images/services/bite-splint.png', name: 'Bite Splint' },
+  { src: '/images/services/clear-retainer.png', name: 'Clear Retainer' },
+]
 
 function Word({ children, delay, reduced }) {
   if (reduced) return <span>{children}</span>
@@ -34,6 +112,10 @@ export function Hero() {
         aria-hidden="true"
         className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"
       />
+
+      {/* Floating product showcases — auto-cycling, desktop only */}
+      <ProductStepper side="left" items={LEFT_ITEMS} reduced={reduced} delay={0.5} />
+      <ProductStepper side="right" items={RIGHT_ITEMS} reduced={reduced} delay={0.65} />
 
       <Container className="relative flex min-h-[88vh] flex-col items-center justify-center py-32 text-center">
         <motion.span
